@@ -64,13 +64,13 @@
 }
 
 a {
-  color:#1e0ef3;
+  color:#007226;
   text-decoration: none;
 }
 
 a:focus,
 a:hover {
-  color: #888ee6;
+  color: #90e688;
   text-decoration: none;
 }
 
@@ -80,7 +80,7 @@ th,
 tr,
 p,
 a {
-  font-family:'Lato', sans-serif;
+  font-family:'Geneva', 'Lato', sans-serif;
   font-size: 14.5px;
   text-align: left;
 }
@@ -91,18 +91,18 @@ strong {
 }
 
 heading {
-  font-family: 'Lato',sans-serif;
+  font-family: 'Geneva','Lato',sans-serif;
   font-size: 22px;
 }
 
 papertitle {
-  font-family: 'Lato',sans-serif;
+  font-family: 'Geneva','Lato',sans-serif;
   font-size: 14px;
   font-weight: 700
 }
 
 name {
-  font-family:'Lato',sans-serif;
+  font-family:'Geneva' ,'Lato',sans-serif;
   font-size: 32px;
 }
 
