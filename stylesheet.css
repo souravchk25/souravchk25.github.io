@@ -88,13 +88,13 @@
   
 
 a {
-  color:#9c590b;
+  color:#152aeefd;
   text-decoration: none;
 }
 
 a:focus,
 a:hover {
-  color: #d39608;
+  color: #839ef7;
   text-decoration: none;
 }
 
@@ -105,7 +105,7 @@ tr,
 p,
 a {
   font-family:  "Computer Modern", Geneva, 'Lato', Tahoma, sans-serif;
-  font-size: 14.5px;
+  font-size: 14px;
   text-align: left;
 }
 
@@ -161,5 +161,5 @@ name {
 }
 
 span.highlight {
-  background-color: #ffffd0;
+  background-color: #f3f3c3;
 }
