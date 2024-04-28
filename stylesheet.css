@@ -87,14 +87,25 @@
 
   
 
-a {
+/*a {
   color:#0216cafd;
+  text-decoration: none;
+}*/
+
+/*a {
+  color:#9D0841   ;
+  text-decoration: none;
+}*/
+
+a {
+  color:#222FCF;
   text-decoration: none;
 }
 
+
 a:focus,
 a:hover {
-  color: #839ef7;
+  color: #ED6B9C ;
   text-decoration: none;
 }
 
