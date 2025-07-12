@@ -92,13 +92,18 @@
   text-decoration: none;
 }*/
 
-/*a {
+/* a {
   color:#9D0841   ;
   text-decoration: none;
-}*/
+} */
+
+/* a {
+  color:#dd7200fc;
+  text-decoration: none;
+} */
 
 a {
-  color:#222FCF;
+  color:#002bd6;
   text-decoration: none;
 }
 
@@ -147,7 +152,7 @@ papertitle {
 
 name {
   font-family:'Geneva' ,'Lato',sans-serif;
-  font-size: 32px;
+  font-size: 28px;
 }
 
 .one {
@@ -173,4 +178,9 @@ name {
 
 span.highlight {
   background-color: #f3f3c3;
+}
+
+a:hover {
+  color: #368207;
+  text-decoration: underline;
 }
