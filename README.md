@@ -1,1 +1,1 @@
-Code repo for my person website.
+Code repo for my personal website.
