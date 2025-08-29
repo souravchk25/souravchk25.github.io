@@ -15,6 +15,10 @@
       text-align: justify;
     }
   </style>
+  <script type="text/javascript"
+    async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+
   
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
@@ -28,7 +32,7 @@
             <td style="padding:2.5%;width:63%;vertical-align:middle">
               <p style="text-align:center">
                 <name>Sourav Chakraborty</name><br>
-                <span style="font-size: small; color: rgb(146, 121, 107);">Ph.D. Student · Theoretical Machine Learning · University of Colorado</span>
+                <span style="font-size: small; color: rgb(222, 144, 99);">Ph.D. Student · Theoretical Machine Learning · University of Colorado</span>
                 <p style="text-align: center; font-style: italic; color: #555; font-size: small;">
                   "All models are wrong, but some are useful." – George Box
                 </p>
@@ -57,7 +61,7 @@
                 <a href="mailto:sourav.chakraborty@colorado.edu">Official Email</a> &nbsp;&bull;&nbsp;
                   <!-- <a href="mailto:mail.souravchk@gmail.com">Personal Email</a>&nbsp;&bull;&nbsp; -->
                 <a href="https://www.linkedin.com/in/souravchk/">LinkedIn</a> &nbsp;&bull;&nbsp;
-                <a href="">CV</a> &nbsp;&bull;&nbsp;
+                <!-- <a href="">CV</a> &nbsp;&bull;&nbsp; -->
                 <a href="https://scholar.google.com/citations?hl=en&user=19m6XE4AAAAJ&view_op=list_works&gmla=AGd7smHpS_EnoiQAq2ZKg0HR-LbWuXLjTYG_sAkcVx5h64AYMayt6U69y1LvGuhMHYBrj_l-Fm_KIMJX0olMTkBC">Scholar</a>
               </p>
               
@@ -145,12 +149,20 @@
                 <td style="padding:20px;width:100%;vertical-align:middle">
                   <heading>Research</heading>
                   <p>
-                    I work on theoretical machine learning, with a focus on online learning and sequential decision-making under uncertainty. Much of my research studies how structural constraints, like limited feedback, local movement, or evolving graph structure, shape the learnability of an environment.
+                    I work on theoretical machine learning, with a focus on online learning and sequential decision-making under uncertainty. My research studies how structural constraints, such as limited feedback, local movement, and evolving graph structure, shape the learnability of an environment.
                   </p>
                   <p>
-                    I design algorithms that are simple, robust, and provably efficient, often in settings where actions are constrained and global information is unavailable. Recent work includes bandit learning on dynamic graphs and exploration strategies that adapt to feedback, movement, and temporal drift.
+                    I design algorithms that are provably efficient, even in settings where actions are constrained and global information is unavailable. This agenda has led to contributions in <em>incentivized exploration</em>, where agents are compensated to overcome myopic behavior under non-stationary rewards, and in <em>graph-constrained bandits</em>, where local movement and dynamic connectivity dictate exploration and learning.
                   </p>
+                  <p>
+                    My current work develops methods for learning on structured and random graphs, designing algorithms that adapt gracefully to feedback, movement, and temporal drift.
+                  </p>
+                  <p></p>
+                  <p></p>
+                <em>*Equal Contribution</em>
                 </td>
+                
+
               </tr>
             </tbody>
           </table>
@@ -163,11 +175,11 @@
           <tbody>
 
             <tr onmouseout="cdc25_stop()" onmouseover="cdc25_start()">
-              <td style="padding:20px;width:25%;vertical-align:middle;">
+              <td style="padding:0px;width:25%;vertical-align:middle;">
                 <div class="one">
                   <div class="two" id='cdc25_image'>
-                    <img src='images/cu-icon.png' width="100"></div>
-                  <img src='images/cu-icon.png' width="100">
+                    <img src='images/cdc25-intro-fig.png' width="220"></div>
+                  <img src='images/cdc25-intro-fig.png' width="220">
                 </div>
                 <script type="text/javascript">
                   function cdc25_start() {
@@ -185,17 +197,25 @@
                   <papertitle> Incentivized Lipschitz Bandits.</papertitle>
                 </a>
                 <br>
-                <strong>Sourav Chakraborty*, Amit Kiran Rege*, Claire Monteleoni</strong> and <strong>Lijun Chen</strong>
+                <strong>Sourav Chakraborty*</strong>, Amit Kiran Rege*, Claire Monteleoni, Lijun Chen  
                 <br>
                 <em><strong><span style="color: green">Accepted</span> at IEEE Conference on Decision and Control (CDC) 2025</strong> in Rio de Janeiro, Brazil.</em>
                 <br>
-                <a href="">IEEE version</a>&nbsp/
-                <a href="">arXiv</a>
-                </td>
+                <a href="">IEEE version (yet to come)</a>&nbsp/
+                <a href="https://arxiv.org/pdf/2508.19466">arXiv</a>
+                <p></p>
+                <div style="font-size: small;text-align: justify;">
+                  
+                  We study incentivized exploration in bandit settings with infinitely many arms over continuous metric spaces. A principal offers compensation to myopic agents to encourage exploration, but must contend with reward drift due to biased feedback. 
+  
+                  We develop discretization-based algorithms that achieve both sublinear regret and sublinear compensation, with guarantees of \( \widetilde{O}(T^{(d+1/d+2)}) \) where \( d \) is the covering dimension. We extend our approach to contextual bandits and validate it through simulations.
+                </div>
+                  
+              </td>
             </tr>
 
           <tr onmouseout="acc24_stop()" onmouseover="acc24_start()">
-            <td style="padding:20px;width:25%;vertical-align:middle">
+            <td style="padding:10px;width:25%;vertical-align:middle">
               <div class="one">
                 <div class="two" id='acc24_image'>
                   <img src='images/acc24-2.png' width="200"></div>
@@ -217,7 +237,7 @@
                 <papertitle> Incentivized Exploration in Non-stationary Stochastic Bandits.</papertitle>
               </a>
               <br>
-              <strong>Sourav Chakraborty</strong> and <strong>Lijun Chen</strong>
+              <strong>Sourav Chakraborty</strong> and Lijun Chen.
               <br>
               <em><strong><span style="color: green">Accepted</span> at IEEE American Control Conference (ACC) 2024</strong> in Toronto, Canada.</em>
               <br>
@@ -228,6 +248,12 @@
               <a href="https://arxiv.org/pdf/2403.10819">arXiv</a>&nbsp/
               <a href="https://www.proquest.com/pqdtglobal/docview/2681066075/AD79799B18734CCAPQ/1?accountid=14503">thesis</a>
               <p></p>
+              <div style="font-size: small;text-align: justify;">
+                We study incentivized exploration in non-stationary bandit settings, where agents receive compensation to explore beyond their greedy choices, but report biased feedback. 
+  
+                We propose algorithms for both abruptly-changing and continuously-drifting environments, and show they achieve sublinear regret and compensation—even under biased rewards—thus enabling effective exploration over time.
+
+              </div>
              <!-- <p>We explore incentivized exploration in the multiarmed bandit (MAB) problem with changing reward distributions and biased feedback. Our algorithms address abruptly and continuously changing environments, achieving sublinear regret and compensation, effectively incentivizing exploration despite challenges. -->
                </p>
               </td>
@@ -255,9 +281,10 @@
         </tbody></table>
         <table width="100%" align="center" border="0" cellpadding="20"><tbody>
           <tr>
-            <td style="padding:20px;width:10%;vertical-align:middle"><img width="100",height="100", src="images/cu-icon.png"></td>
+            <td style="padding:20px;width:10%;vertical-align:middle;text-align: justify"><img width="100",height="100", src="images/cu-icon.png"></td>
             <td width="75%" valign="center">
               <ul>
+                <li><strong>Fall 2025</strong>: Teaching Assistant for CSCI 2275 - Programming and Data Structures.</li>
                 <li><strong>Summer 2025</strong>: Teaching Assistant for CSCI 1300 - Starting Computing</li>
                 <li><strong>Spring 2025</strong>: Teaching Assistant for CSCI 3104 - Algorithms</li>   
                 <li><strong>Fall 2024</strong>: Teaching Assistant for CSCI 3104 - Algorithms</li>   
@@ -478,7 +505,7 @@
         </tbody></table>
 
 	<p style="text-align:center;font-size:x-small;">
-            Last updated: July 2025 <br> Thanks <a href="https://jonbarron.info/" style="font-size:x-small">Jon Barron!</a>
+            Last updated: Aug 2025 <br> Thanks <a href="https://jonbarron.info/" style="font-size:x-small">Jon Barron!</a>
         </p>
 	<div style="text-align: center; margin-top: 30px;">
   		<div style="transform: scale(1.0); transform-origin: top center;">
