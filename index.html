@@ -220,11 +220,23 @@ Prior to my doctoral studies, I completed my Master’s in Computer Science at C
           <tbody>
 
             
-            <tr>
+            <tr onmouseout="aistats_stop()" onmouseover="aistats_start()">
               <td style="padding:0px;width:25%;vertical-align:top; text-align:center;">
-                <div class="recent-paper-thumb" style="margin-top: 14px;">
-                  <img src='images/aistats-pic_page-0001.jpg'>
+                <div class="one" style="margin-top: 14px;">
+                  <div class="two" id='aistats_image'>
+                    <img src='images/aistats-pic_page-0001.jpg' width="160"></div>
+                  <img src='images/aistats-pic_page-0001.jpg' width="160">
                 </div>
+                <script type="text/javascript">
+                  function aistats_start() {
+                    document.getElementById('aistats_image').style.opacity = "1";
+                  }
+
+                  function aistats_stop() {
+                    document.getElementById('aistats_image').style.opacity = "0";
+                  }
+                  aistats_start()
+                </script>
               </td>
               <td style="padding:14px 20px;width:75%;vertical-align:top">
                 <a href="https://arxiv.org/abs/2602.16965">
@@ -244,11 +256,23 @@ Prior to my doctoral studies, I completed my Master’s in Computer Science at C
               </td>
             </tr>
 
-            <tr>
+            <tr onmouseout="l4dc1_stop()" onmouseover="l4dc1_start()">
               <td style="padding:0px;width:25%;vertical-align:top; text-align:center;">
-                <div class="recent-paper-thumb">
-                  <img src='images/fmab-s.drawio_cropped_page-0001.jpg'>
+                <div class="one">
+                  <div class="two" id='l4dc1_image'>
+                    <img src='images/fmab-s.drawio_cropped_page-0001.jpg' width="160"></div>
+                  <img src='images/fmab-s.drawio_cropped_page-0001.jpg' width="160">
                 </div>
+                <script type="text/javascript">
+                  function l4dc1_start() {
+                    document.getElementById('l4dc1_image').style.opacity = "1";
+                  }
+
+                  function l4dc1_stop() {
+                    document.getElementById('l4dc1_image').style.opacity = "0";
+                  }
+                  l4dc1_start()
+                </script>
               </td>
               <td style="padding:14px 20px;width:75%;vertical-align:top">
                 <a href="https://arxiv.org/abs/2602.17315">
@@ -304,11 +328,23 @@ Prior to my doctoral studies, I completed my Master’s in Computer Science at C
               </td>
             </tr>
 
-            <tr>
+            <tr onmouseout="arlet_stop()" onmouseover="arlet_start()">
               <td style="padding:0px;width:25%;vertical-align:top;text-align:center;" >
-                <div class="recent-paper-thumb" style="margin-top: 14px;">
-                  <img src='images/aaai26_page-0001.jpg' style="max-width: 86%; max-height: 86%;">
+                <div class="one" style="margin-top: 14px;">
+                  <div class="two" id='arlet_image'>
+                    <img src='images/aaai26_page-0001.jpg' width="138"></div>
+                  <img src='images/aaai26_page-0001.jpg' width="138">
                 </div>
+                <script type="text/javascript">
+                  function arlet_start() {
+                    document.getElementById('arlet_image').style.opacity = "1";
+                  }
+
+                  function arlet_stop() {
+                    document.getElementById('arlet_image').style.opacity = "0";
+                  }
+                  arlet_start()
+                </script>
               </td>
               <td style="padding:14px 20px;width:75%;vertical-align:top">
                 <a href="https://openreview.net/forum?id=1kSkM0IF7K">
