@@ -178,3 +178,15 @@ a:hover {
   color: #368207;
   text-decoration: underline;
 }
+
+.paper-section-label {
+  font-size: 11.5px;
+  color: #bbb;
+  font-style: italic;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border-top: 1px solid #ebebeb;
+  display: block;
+  padding-top: 6px;
+  margin-top: 2px;
+}
