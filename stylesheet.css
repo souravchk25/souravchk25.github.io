@@ -179,6 +179,32 @@ a:hover {
   text-decoration: underline;
 }
 
+.pub-card {
+  width: 110px;
+  height: 110px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #f6f6f6;
+  border: 1px solid #e2e2e2;
+  border-radius: 5px;
+  margin-top: 12px;
+  margin-left: auto;
+  margin-right: 30px;
+  box-sizing: border-box;
+}
+
+.pub-card-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: #555;
+  letter-spacing: 0.03em;
+  text-align: center;
+  padding: 0 10px;
+  line-height: 1.5;
+}
+
 .paper-section-label {
   font-size: 11.5px;
   color: #bbb;
