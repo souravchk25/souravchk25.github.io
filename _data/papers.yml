@@ -1,0 +1,177 @@
+# Papers, grouped on the page by theme (in this order within a theme).
+#   id:      file name of the thumbnail, _includes/thumbs/<id>.html
+#   theme:   one of the ids in _data/themes.yml
+#   url:     where the title links; leave out for papers not yet public
+#   badges:  type is bp (best paper), oral, or rev (under review); text is what the badge says
+#   authors: plain text; your name is highlighted automatically. equal: true adds "*equal contribution"
+#   venue, abbr: full venue name and the short tag, e.g. "L4DC 2026"
+#   thumb_style: drawn for thumbnails drawn by assets/js/paper-thumbs.js (no tinted box behind them)
+#   tldr:    one or two sentences
+#   links:   label and url for each button; note: grey text after the links, e.g. "arXiv link soon"
+
+- id: fmab
+  thumb_style: drawn
+  theme: graphs
+  title: Flickering Multi-Armed Bandits
+  url: https://arxiv.org/abs/2602.17315
+  badges:
+  - type: bp
+    text: Best Paper Runner-Up
+  - type: oral
+    text: Oral
+  authors: Sourav Chakraborty*, Amit Kiran Rege*, Claire Monteleoni, Lijun Chen
+  equal: true
+  venue: 8th Annual Learning for Dynamics and Control Conference, Los Angeles
+  abbr: L4DC 2026
+  tldr: Arms sit on a random graph that rewires every round, and the learner can only step to a neighbor. A two-phase algorithm built on lazy random walks gets near-optimal sublinear regret.
+  links:
+  - label: arXiv
+    url: https://arxiv.org/abs/2602.17315
+  - label: PDF
+    url: https://arxiv.org/pdf/2602.17315
+  note: slides and video soon
+- id: local-walks
+  thumb_style: drawn
+  theme: graphs
+  title: Learning from Local Walks on Dynamic Graphs with Bandit Feedback
+  url: https://arxiv.org/abs/2607.10571
+  authors: Sourav Chakraborty*, Amit Kiran Rege*, Claire Monteleoni, Lijun Chen
+  equal: true
+  venue: 65th IEEE Conference on Decision and Control, Honolulu
+  abbr: IEEE CDC 2026
+  tldr: The learner walks on a sequence of graphs and sees rewards only where it stands. Under a sliding-window mixing condition, local explore-then-commit algorithms get sublinear expected regret.
+  links:
+  - label: arXiv
+    url: https://arxiv.org/abs/2607.10571
+  - label: PDF
+    url: files/cdc-graph.pdf
+- id: dynamic-graphs-workshop
+  thumb_style: drawn
+  theme: graphs
+  title: Bandit Learning on Dynamic Graphs
+  url: https://openreview.net/forum?id=1kSkM0IF7K
+  authors: Sourav Chakraborty*, Amit Kiran Rege*, Claire Monteleoni, Lijun Chen
+  equal: true
+  venue: NeurIPS 2025 Workshop on Aligning Reinforcement Learning Experimentalists and Theorists, San Diego
+  abbr: NeurIPS 2025 workshop
+  tldr: When can an agent that moves locally on a changing graph learn at all? Sufficient structural conditions for learnability, and near-optimal exploration policies under them.
+  links:
+  - label: OpenReview
+    url: https://openreview.net/forum?id=1kSkM0IF7K
+- id: locality-marl
+  thumb_style: drawn
+  theme: marl
+  title: A Unified Framework for Locality in Scalable MARL
+  url: https://arxiv.org/abs/2602.16966
+  authors: Sourav Chakraborty*, Amit Kiran Rege*, Claire Monteleoni, Lijun Chen
+  equal: true
+  venue: 8th Annual Learning for Dynamics and Control Conference, Los Angeles
+  abbr: L4DC 2026
+  tldr: Whether agents can plan with a small neighborhood depends on the policy as well as the environment. A spectral condition, weaker than the usual row-sum test, certifies it, and for softmax policies the temperature controls it.
+  links:
+  - label: arXiv
+    url: https://arxiv.org/abs/2602.16966
+  - label: PDF
+    url: https://arxiv.org/pdf/2602.16966
+  note: slides soon
+- id: comm-delay-marl
+  thumb_style: drawn
+  theme: marl
+  title: Characterizing the Impact of Communication Delay in Networked Multi-Agent Reinforcement Learning
+  badges:
+  - type: rev
+    text: under review
+  authors: Sourav Chakraborty*, Amit Kiran Rege*, Adam Wierman, Lijun Chen
+  equal: true
+  tldr: What delayed messages between agents do to what networked MARL can learn.
+  note: arXiv link soon
+- id: kata
+  thumb_style: drawn
+  theme: fm
+  title: 'Kernelized Linear Attention: Breaking the Capacity Wall with Symmetric Cones'
+  url: https://arxiv.org/abs/2607.17419
+  badges:
+  - type: rev
+    text: under review
+  authors: Ayoub Ghriss, Sourav Chakraborty
+  tldr: Associative recall in linear attention as a sphere-packing problem, with feature maps over self-dual symmetric cones. Rank-one PSD features enlarge the recurrent state without adding parameters. My part was the mathematics.
+  links:
+  - label: arXiv
+    url: https://arxiv.org/abs/2607.17419
+- id: multi-agent-lipschitz
+  thumb_style: drawn
+  theme: cont
+  title: Multi-Agent Lipschitz Bandits
+  url: https://arxiv.org/abs/2602.16965
+  authors: Sourav Chakraborty*, Amit Kiran Rege*, Claire Monteleoni, Lijun Chen
+  equal: true
+  venue: 29th International Conference on Artificial Intelligence and Statistics, Tangier
+  abbr: AISTATS 2026
+  tldr: Several players share one continuous action space and cannot communicate. Separating coordination from exploration gives near-optimal regret, with a coordination cost that does not grow with the horizon.
+  links:
+  - label: arXiv
+    url: https://arxiv.org/abs/2602.16965
+  - label: PDF
+    url: https://arxiv.org/pdf/2602.16965
+- id: proximity-collisions
+  thumb_style: drawn
+  theme: cont
+  title: Decentralized Lipschitz Bandits with Proximity Collisions
+  badges:
+  - type: rev
+    text: under review
+  authors: Sourav Chakraborty*, Amit Kiran Rege*, Lijun Chen
+  equal: true
+  tldr: 'Agents collide when they come within $\rho$ of each other. ConfigZoom keeps one shared adaptive partition and plays points inside its cells, so placements close to the collision distance stay available; in the worst case its regret matches a centralized lower bound up to log factors.'
+  note: arXiv link soon
+- id: incentivized-lipschitz
+  thumb_style: drawn
+  theme: cont
+  title: Incentivized Lipschitz Bandits
+  url: https://arxiv.org/abs/2508.19466
+  authors: Sourav Chakraborty*, Amit Kiran Rege*, Claire Monteleoni, Lijun Chen
+  equal: true
+  venue: 64th IEEE Conference on Decision and Control, Rio de Janeiro
+  abbr: IEEE CDC 2025
+  tldr: A principal pays myopic agents to explore a continuous action space, and the payments bias the feedback they report. Uniform-discretization algorithms still get near-optimal regret.
+  links:
+  - label: arXiv
+    url: https://arxiv.org/abs/2508.19466
+  - label: IEEE
+    url: https://ieeexplore.ieee.org/document/11312562
+- id: incentivized-nonstationary
+  thumb_style: drawn
+  theme: cont
+  title: Incentivized Exploration in Non-stationary Stochastic Bandits
+  url: https://arxiv.org/abs/2403.10819
+  authors: Sourav Chakraborty, Lijun Chen
+  venue: 2024 American Control Conference, Toronto
+  abbr: IEEE ACC 2024
+  tldr: Incentivized exploration when rewards change abruptly or drift, and payments bias the feedback. Near-optimal algorithms for both cases. This grew out of my M.S. thesis.
+  links:
+  - label: arXiv
+    url: https://arxiv.org/abs/2403.10819
+  - label: IEEE
+    url: https://ieeexplore.ieee.org/document/10644966
+  - label: M.S. thesis
+    url: files/ms_thesis.pdf
+- id: quantum-nonstationary
+  thumb_style: drawn
+  theme: quantum
+  title: Non-Stationary Quantum Bandits under a Variation Budget
+  badges:
+  - type: rev
+    text: under review
+  authors: Jiarui Hu, Sourav Chakraborty, Lijun Chen
+  tldr: 'Rewards drift within a variation budget $V_T$. Restarting a stationary quantum learner every $\sqrt{KT/V_T}$ rounds gives dynamic regret $\tilde O(\sqrt{K V_T T})$, below the classical $(K V_T)^{1/3} T^{2/3}$, with a matching lower bound and a variant that learns the window.'
+  note: arXiv link soon
+- id: quantum-regret-bounds
+  thumb_style: drawn
+  theme: quantum
+  title: On Regret Bounds of Quantum Bandit Algorithms
+  badges:
+  - type: rev
+    text: under review
+  authors: Jiarui Hu, Wenzhi Chen, Sourav Chakraborty, Lijun Chen
+  tldr: 'Lower bounds of $\Omega(n\sigma\log T)$ for quantum multi-armed bandits and $\Omega(\sigma d\log T)$ for quantum linear bandits, with upper bounds that match for $\sigma = \Omega(1)$: the $\log T$ is the cost of confidence, and keeping quantum memory between stages does not help.'
+  note: arXiv link soon

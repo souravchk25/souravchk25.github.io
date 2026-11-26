@@ -1,0 +1,32 @@
+# Research themes, in the order shown on the theme cards, the rail and the Research panel.
+#   id:     used in links (#t-<id>) and file names (_includes/themes/<id>.html, papers' theme field)
+#   short:  label on the theme card and the rail
+#   title:  heading inside the Research panel
+#   color:  1 to 6, the theme colour (--t1 ... --t6 in assets/css/site.css)
+#   glyph:  icon id from _includes/icons.html
+
+- id: graphs
+  short: Bandits with changing arm availability
+  title: Bandits with changing arm availability
+  color: 1
+  glyph: g-graph
+- id: marl
+  short: Multi-agent reinforcement learning
+  title: Multi-agent reinforcement learning
+  color: 2
+  glyph: g-lattice
+- id: fm
+  short: Large language models (LLMs)
+  title: Large language models (LLMs)
+  color: 4
+  glyph: g-net
+- id: cont
+  short: Continuous and incentivized bandits
+  title: Continuous, multi-agent, and incentivized bandits
+  color: 3
+  glyph: g-curve
+- id: quantum
+  short: Quantum bandits
+  title: Quantum bandits
+  color: 5
+  glyph: g-bloch

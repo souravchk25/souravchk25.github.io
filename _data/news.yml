@@ -1,0 +1,85 @@
+# News, newest first. The box shows about six items and scrolls for the rest.
+#   date:  shown as written, e.g. "Jun 2026"
+#   kind:  colour of the dot: paper, bp (best paper), award, talk, teach, life
+#   theme: optional; links [[Paper title]] in text to that research theme, in its colour.
+#          To link papers from different themes in one item, write [[<theme id>:Paper title]]
+#          (theme ids are in _data/themes.yml) and leave theme: out.
+#   text:  Markdown. **bold** is shown in the award colour; **bold**{: .plain} is plain black bold
+#          (put the text in single quotes when it uses {: }).
+#          [text](url) is a normal link.
+
+- date: Nov 2026
+  kind: award
+  text: Received the **Ralph J. Slutz Student Excellence Award**.
+- date: Oct 2026
+  kind: award
+  text: Travel award to present at IEEE CDC 2026 in Honolulu.
+- date: Jul 2026
+  kind: paper
+  theme: graphs
+  text: '[[Learning from Local Walks on Dynamic Graphs]] accepted at IEEE CDC 2026.'
+- date: Jun 2026
+  kind: bp
+  theme: graphs
+  text: '[[Flickering Multi-Armed Bandits]] won the **Best Paper Runner-Up** award (1 of 2) at L4DC 2026, with an oral talk.'
+- date: May 2026
+  kind: life
+  text: 'Joined **Caltech**{: .plain} CMS as a visiting student researcher, and gave talks on both L4DC papers to RSRG and FALCON.'
+- date: Feb 2026
+  kind: life
+  text: Defended my PhD thesis proposal.
+- date: Jan 2026
+  kind: paper
+  theme: cont
+  text: '[[Multi-Agent Lipschitz Bandits]] accepted at AISTATS 2026.'
+- date: Jan 2026
+  kind: paper
+  text: 'Two papers accepted at L4DC 2026: [[graphs:Flickering Multi-Armed Bandits]] and [[marl:A Unified Framework for Locality in Scalable MARL]].'
+- date: Sep 2025
+  kind: paper
+  theme: graphs
+  text: '[[Bandit Learning on Dynamic Graphs]] accepted at the NeurIPS 2025 ARLET workshop.'
+- date: Jul 2025
+  kind: paper
+  theme: cont
+  text: '[[Incentivized Lipschitz Bandits]] accepted at IEEE CDC 2025.'
+- date: Dec 2024
+  kind: life
+  text: Passed the CS PhD preliminary exam.
+- date: Mar 2024
+  kind: teach
+  text: Reappointed as a department Lead TA for 2024–25.
+- date: Jan 2024
+  kind: paper
+  theme: cont
+  text: My first paper, [[Incentivized Exploration in Non-stationary Stochastic Bandits]], accepted at IEEE ACC 2024.
+- date: Aug 2023
+  kind: talk
+  text: Guest lecture on bandits for the Fall 2023 Advanced ML course.
+- date: Mar 2023
+  kind: life
+  text: Elected student representative to the CS Graduate Committee.
+- date: Mar 2023
+  kind: teach
+  text: Reappointed as a department Lead TA for 2023–24.
+- date: Aug 2022
+  kind: life
+  text: Started my PhD in CS at CU Boulder.
+- date: May 2022
+  kind: award
+  text: Finished my M.S. with the **Lloyd Botway Award**, the department's highest honor for a graduating master's student.
+- date: Apr 2022
+  kind: life
+  text: Defended my [master's thesis](files/ms_thesis.pdf), and was selected as a department Lead TA.
+- date: Feb 2022
+  kind: life
+  text: Offered a place in the CS PhD program at Colorado, starting Fall 2022.
+- date: Aug 2019
+  kind: life
+  text: Started my M.S. in CS at Colorado.
+- date: Dec 2016
+  kind: life
+  text: Joined Flipkart in Bangalore as a software engineer.
+- date: Jun 2016
+  kind: life
+  text: Finished my B.E. at BIT Mesra.

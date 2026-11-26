@@ -1,0 +1,17 @@
+{%- assign A = site.analytics -%}
+{%- if A.clarity and jekyll.environment == 'production' %}
+<!-- Microsoft Clarity -->
+<script>
+  (function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "{{ A.clarity }}");
+</script>
+{%- endif %}
+{%- if A.statcounter_project and jekyll.environment == 'production' %}
+<!-- Statcounter -->
+<script>var sc_project={{ A.statcounter_project }}; var sc_invisible=1; var sc_security="{{ A.statcounter_security }}";</script>
+<script src="https://www.statcounter.com/counter/counter.js" async></script>
+<noscript><div class="statcounter"><a title="Web Analytics Made Easy - Statcounter" href="https://statcounter.com/"><img class="statcounter" src="https://c.statcounter.com/{{ A.statcounter_project }}/0/{{ A.statcounter_security }}/1/" alt="Web Analytics Made Easy - Statcounter" referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
+{%- endif %}

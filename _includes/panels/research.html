@@ -1,0 +1,24 @@
+<!-- Research panel. Theme order and names: _data/themes.yml. Theme text and figures: _includes/themes/. Papers: _data/papers.yml. -->
+<div class="res">
+  <nav class="rail" aria-label="Research themes">
+    {% for t in site.data.themes %}<a href="#t-{{ t.id }}"><span class="dot" style="background:var(--t{{ t.color }})"></span>{{ t.short }}</a>
+    {% endfor %}<p>The complete list, including papers under review, is in my <a href="{{ site.cv | relative_url }}">CV</a> and on <a href="https://scholar.google.com/citations?user=19m6XE4AAAAJ">Google Scholar</a>.</p>
+  </nav>
+  <div>
+    <h2>Research</h2>
+    <p class="panel-intro j">Five threads, one question: what can be learned from feedback that is partial, local, biased, or late? Each thread starts with the idea and ends with its papers. Papers marked <span class="badge b-rev">under review</span> are preprints.</p>
+    {% for t in site.data.themes %}
+    <article class="theme th{{ t.color }}" id="t-{{ t.id }}">
+      <h3>{{ t.title }}</h3>
+      {% include themes/{{ t.id }}.html %}
+      {% assign tp = site.data.papers | where: "theme", t.id %}
+      {% if tp.size > 0 %}
+      <div class="plist">
+        <h4>Papers</h4>
+        {% for p in tp %}{% include paper.html p=p %}{% endfor %}
+      </div>
+      {% endif %}
+    </article>
+    {% endfor %}
+  </div>
+</div>

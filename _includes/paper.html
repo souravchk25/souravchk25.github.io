@@ -1,0 +1,12 @@
+<!-- one paper card; fields are described at the top of _data/papers.yml -->
+{% assign p = include.p %}{% assign me = '<span class="me">' | append: site.data.profile.name | append: '</span>' %}
+<div class="paper">
+  <div class="pthumb{% if p.thumb_style == 'drawn' %} clean{% endif %}">{% include thumbs/{{ p.id }}.html %}</div>
+  <div>
+    <h5>{% if p.url %}<a href="{{ p.url }}">{{ p.title }}</a>{% else %}{{ p.title }}{% endif %}{% for b in p.badges %}<span class="badge b-{{ b.type }}">{{ b.text }}</span>{% endfor %}</h5>
+    <p class="authors">{{ p.authors | replace: site.data.profile.name, me }}{% if p.equal %} <small>*equal contribution</small>{% endif %}</p>
+    {% if p.venue %}<p class="venue">{{ p.venue }}{% if p.abbr %}<span class="abbr">{{ p.abbr }}</span>{% endif %}</p>{% endif %}
+    {% if p.tldr %}<p class="tldr j">{{ p.tldr }}</p>{% endif %}
+    <p class="res-links">{% for l in p.links %}<a href="{{ l.url }}">{{ l.label }}</a>{% endfor %}{% if p.note %}<span class="na">{{ p.note }}</span>{% endif %}</p>
+  </div>
+</div>

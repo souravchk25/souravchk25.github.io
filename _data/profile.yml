@@ -1,0 +1,14 @@
+# Who you are, shown at the top left of the landing page.
+# job_note is the small box at the top right. **bold** marks the roles.
+# Set landing.job_note: false in _config.yml to hide it.
+
+name: Sourav Chakraborty
+# say: *italics* mark the pronunciations (green, then magenta).
+say: Pronounced *Saw-rv*, or *Show-oo-rob* in Bengali
+# oneliner: the orange line under the name. oneliner_short replaces it on phones, where the full line does not fit.
+oneliner: Bandits · Reinforcement Learning · LLMs
+oneliner_short: Bandits · RL · LLMs
+# quote: optional small italic line in the card (add quote: and quote_by: to show one).
+portrait: images/portrait-ouray-head.jpg
+portrait_alt: Sourav Chakraborty, smiling, in front of a mountain valley in Ouray, Colorado
+job_note: I will graduate in Spring 2027 and am open to **research scientist**, **applied scientist**, and **research engineer** roles that fit my background, in areas like core ML and RL research, LLM post-training, personalization, and adaptive experimentation, among others.

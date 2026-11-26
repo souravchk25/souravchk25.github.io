@@ -1,0 +1,48 @@
+# Site settings. After editing this file, restart `bundle exec jekyll serve`
+# (it does not reload _config.yml on its own). GitHub Pages rebuilds on every push.
+
+title: Sourav Chakraborty
+description: >-
+  Sourav Chakraborty: PhD candidate at the University of Colorado Boulder working on bandits,
+  multi-agent reinforcement learning, and the mathematics of learning from feedback.
+url: "https://souravchk25.github.io"
+baseurl: ""
+author: Sourav Chakraborty
+lang: en
+image: /images/portrait.jpg      # preview image for links shared on LinkedIn and elsewhere
+
+# Stable CV address: replace files/cv.pdf with each new CV and every link stays valid.
+cv: /files/cv.pdf
+
+# ---------------------------------------------------------------- landing page switches
+landing:
+  job_note: true          # the "I will graduate in Spring 2027..." box (text in _data/profile.yml)
+  random_fact: true       # the fact with the die (facts in _data/facts.yml)
+  comic: regret           # a file name from _includes/comics/, or false for no comic
+  theme_cards: true       # the row of research theme cards
+  theme_cards_hint: true  # "each opens its section below" next to the Research themes label
+  map_graph: lattice      # lattice, tall (zigzag) or medium (zigzag)
+  map_ticks: true         # faint dotted lines from each node down to its tile
+  map_walk: hop           # hop: the learner walks along edges; jump: it moves straight there
+  fit_first_screen: true  # on tall windows, add room so the line under the map sits at the bottom
+
+# ---------------------------------------------------------------- analytics (delete a line to turn it off)
+analytics:
+  clarity: x5kcptg8wf
+  statcounter_project: 13291702
+  statcounter_security: 426c3493
+
+# ---------------------------------------------------------------- build
+markdown: kramdown
+kramdown:
+  smart_quotes: ["apos", "apos", "quot", "quot"]   # keep straight quotes, as in the rest of the site
+permalink: /blog/:year/:title/
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - node_modules

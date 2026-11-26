@@ -1,0 +1,17 @@
+{%- assign P = site.data.profile -%}
+<div class="who">
+  <div class="portrait"><img src="{{ P.portrait | relative_url }}" alt="{{ P.portrait_alt }}" width="600" height="480"></div>
+  <div>
+    <h1 class="name">{{ P.name }}</h1>
+    <p class="oneliner{% if P.oneliner_short %} has-short{% endif %}"><span class="ol-full">{{ P.oneliner }}</span>{% if P.oneliner_short %}<span class="ol-short">{{ P.oneliner_short }}</span>{% endif %}</p>
+    <p class="say">{{ P.say | markdownify | remove: '<p>' | remove: '</p>' | strip }}</p>
+    {%- if P.quote %}
+    <p class="quote">"{{ P.quote }}" <cite>{{ P.quote_by }}</cite></p>
+    {%- endif %}
+    <ul class="links">
+      {%- for l in site.data.links %}
+      <li><a href="{% if l.url == 'cv' %}{{ site.cv | relative_url }}{% else %}{{ l.url }}{% endif %}"><i class="{{ l.icon }}" aria-hidden="true"></i>{{ l.label }}</a></li>
+      {%- endfor %}
+    </ul>
+  </div>
+</div>

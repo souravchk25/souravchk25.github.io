@@ -1,0 +1,9 @@
+<nav class="map" aria-label="Sections of this site">
+  <svg class="map-graph" id="map-graph" aria-hidden="true"></svg>
+  <div class="tiles" role="tablist">
+    {%- for sec in site.data.sections %}
+    <button class="tile {{ sec.accent }}" role="tab" id="tab-{{ sec.id }}" aria-controls="{{ sec.id }}" aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"><svg style="color:{{ sec.color }}"><use href="#{{ sec.glyph }}"/></svg><span class="tt">{{ sec.title }}</span></button>
+    {%- endfor %}
+  </div>
+  <div class="map-cap"><span>An edge-Markovian graph from <a href="https://arxiv.org/abs/2602.17315">Flickering Multi-Armed Bandits</a>: each round, edges switch on and off, and the learner moves only along edges that are on.</span><button type="button" id="show-all">Show all sections</button></div>
+</nav>

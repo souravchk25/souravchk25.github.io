@@ -1,0 +1,10 @@
+{%- if site.landing.random_fact and site.data.facts.size > 0 -%}
+{%- assign f0 = site.data.facts | first -%}
+<div class="wh wh-fact">
+  <div class="fact-head"><span>A fact, at random</span><button type="button" class="roll" id="next-fact" aria-label="Show another random fact"><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="1.5" y="1.5" width="13" height="13" rx="3" fill="none" stroke="currentColor" stroke-width="1.4"/><g fill="currentColor"><circle cx="5" cy="5" r="1.25"/><circle cx="11" cy="5" r="1.25"/><circle cx="8" cy="8" r="1.25"/><circle cx="5" cy="11" r="1.25"/><circle cx="11" cy="11" r="1.25"/></g></svg><span>roll again?</span></button></div>
+  <p class="fact-text" id="fact-box"><span id="fact" aria-live="polite">{{ f0.text }}{% if f0.source %} <small>({{ f0.source }})</small>{% endif %}</span></p>
+</div>
+{%- endif %}
+{%- if site.landing.comic %}
+<figure class="wh wh-comic">{% include comics/{{ site.landing.comic }}.html %}</figure>
+{%- endif %}

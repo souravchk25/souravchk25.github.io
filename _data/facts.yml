@@ -1,0 +1,15 @@
+# Random facts for the landing page. One is drawn at random each time the die is rolled.
+# Keep each under about 120 characters (two lines), or the slot grows for all of them.
+#   text:   the fact; simple HTML such as <sup> is fine
+#   source: optional, shown small in parentheses
+
+- text: 'My <a href="https://en.wikipedia.org/wiki/Erd%C5%91s_number">Erdős number</a> is 4 and my <a href="https://www.csauthors.net/sourav-chakraborty-009/">Dijkstra number</a> is 5: four coauthor links from Paul Erdős, five from Edsger Dijkstra.'
+- text: I played cricket for a school club, and later for Flipkart's corporate team.
+- text: Thompson sampling dates to 1933, nineteen years before Robbins posed the bandit problem in 1952.
+- text: In World War II the bandit problem so drained Allied analysts that someone proposed dropping it on Germany.
+  source: Whittle, 1979
+- text: A random walk on a 2D grid always comes home. In 3D it escapes for good about 66% of the time.
+  source: Pólya, 1921
+- text: Seven riffle shuffles are enough to mix a 52-card deck.
+  source: Bayer and Diaconis, 1992
+- text: A deck has about 8 × 10<sup>67</sup> orders, so a well-shuffled one is almost surely in an order never seen before.

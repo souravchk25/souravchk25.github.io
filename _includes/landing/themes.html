@@ -1,0 +1,10 @@
+{%- if site.landing.theme_cards -%}
+<section class="glance" aria-labelledby="themes-head">
+  <h2 class="glance-head" id="themes-head">Research themes <span class="hint">each opens its section below</span></h2>
+  <div class="chips">
+    {%- for t in site.data.themes %}
+    <a class="chip th{{ t.color }}" href="#t-{{ t.id }}"><svg style="color:var(--t{{ t.color }})"><use href="#{{ t.glyph }}"/></svg><span><b>{{ t.short }}</b></span></a>
+    {%- endfor %}
+  </div>
+</section>
+{%- endif %}

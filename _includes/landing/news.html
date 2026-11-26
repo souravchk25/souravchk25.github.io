@@ -1,0 +1,22 @@
+<div class="news-box">
+  <h2>News and Updates <span class="hint">scroll for older</span></h2>
+  <div class="news-win">
+    <ul class="news news-scroll" tabindex="0" aria-label="News and updates, newest first; scroll for older items">
+      {%- for n in site.data.news %}
+      {%- assign t = n.text %}
+      {%- for th in site.data.themes %}
+        {%- capture key %}[[{{ th.id }}:{% endcapture %}
+        {%- capture open %}<a class="ptitle th{{ th.color }}" href="#t-{{ th.id }}">{% endcapture %}
+        {%- assign t = t | replace: key, open %}
+      {%- endfor %}
+      {%- assign t = t | replace: ']]', '</a>' %}
+      {%- if n.theme %}
+        {%- assign th = site.data.themes | where: "id", n.theme | first %}
+        {%- capture open %}<a class="ptitle th{{ th.color }}" href="#t-{{ n.theme }}">{% endcapture %}
+        {%- assign t = t | replace: '[[', open %}
+      {%- endif %}
+      <li><time>{{ n.date }}</time><span><i class="kind k-{{ n.kind }}"></i>{{ t | markdownify | remove: '<p>' | remove: '</p>' | strip }}</span></li>
+      {%- endfor %}
+    </ul>
+  </div>
+</div>

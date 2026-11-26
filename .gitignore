@@ -1,0 +1,13 @@
+# Local Jekyll build output and caches (GitHub Pages builds the site itself)
+_site/
+.jekyll-cache/
+.jekyll-metadata
+.sass-cache/
+
+# Gems installed by `bundle install` and the local Bundler config
+vendor/
+.bundle/
+
+# OS and editor files
+.DS_Store
+.idea/
