@@ -79,7 +79,12 @@ Harmless noise you can ignore: "To use retry middleware with Faraday v2.0+, inst
 | A theme's text, figure, physics note | `_includes/themes/<id>.html` |
 | Papers | `_data/papers.yml`, thumbnails in `_includes/thumbs/<id>.html` |
 | Map tiles | `_data/sections.yml` |
-| Talks, Writing, Projects, Experience, Teaching, Awards, Miscellany | `_includes/panels/<id>.html` |
+| Talks (slides, videos, venues) | `_data/talks.yml`, files in `files/talks/` |
+| Experience and skills | `_data/experience.yml` |
+| Teaching: numbers, roles, lectures | `_data/teaching.yml`, lecture drawings in `_includes/lectures/` |
+| Awards: headline cards, groups, service | `_data/awards.yml` (keep the count in `intro` in step) |
+| Miscellany: hobbies, Instagram posts | `_data/misc.yml` |
+| Writing, Projects | `_includes/panels/<id>.html` |
 | Footer | `_includes/footer.html` |
 | Colours, fonts, spacing | `assets/css/site.css` (colours are at the top) |
 | Map, tabs, figures, facts behaviour | `assets/js/site.js` |
@@ -94,8 +99,14 @@ title to its research theme (set `theme:`), `**bold**` shows in the award colour
 Add a paper: copy an entry in `_data/papers.yml`, give it a new `id`, and copy any file in
 `_includes/thumbs/` to `<id>.html` for its thumbnail. Papers appear under their `theme`.
 
+Add a talk recording: put the `.mp4` in `files/talks/` and add `video:` and `length:` to the
+talk in `_data/talks.yml` (or `video: youtube:VIDEO_ID` for a YouTube upload). The card gets a
+play button and the video opens in a player on the page. Before adding an `.mp4`, export it
+with "optimize for web" (fast start) so browsers can start playing it before it fully loads.
+Slide sources (`.pptx`, `.tex`) go in `_src/talks/`, which is not published.
+
 New CV: replace `files/cv.pdf`. Every CV link on the site points there. The old
-`files/Sourav_Chakraborty_CV_Nov26.pdf` is kept only so links shared earlier still work.
+`files/Sourav_Chakraborty_CV_Nov26.pdf` and `Sourav_Chakraborty_Resume.pdf` (the old site's resume link) are copies kept only so links shared earlier still work: replace them too.
 
 Turn a landing block off: set it to `false` under `landing:` in `_config.yml`.
 

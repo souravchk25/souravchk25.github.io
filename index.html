@@ -1,6 +1,7 @@
 ---
 layout: default
 home: true
+image: /images/portrait.jpg   # preview image when the site is shared on LinkedIn, Slack, email
 ---
 {%- comment -%}
   The homepage: landing (intro, news, whimsy), theme cards, the map, then one panel per tile.
@@ -15,6 +16,7 @@ home: true
       </div>
     </div>
     <div>
+      {% if site.landing.hands %}{% include landing/hands.html %}{% endif %}
       {% if site.landing.job_note %}<div class="market">{{ site.data.profile.job_note | markdownify | remove: '<p>' | remove: '</p>' | strip }}</div>{% endif %}
       {% include landing/news.html %}
       {% include landing/whimsy.html %}

@@ -1,0 +1,37 @@
+# Miscellany panel (_includes/panels/misc.html). Edit text here; the panel only lays it out.
+
+intro: 'Away from research: cricket, music, poems, and a long list of films and books.'
+
+# One card per hobby.
+#   icon:   a symbol id from _includes/icons.html;  color: 1 to 6 (the site colours)
+#   text:   a line or two, Markdown allowed
+#   links:  label + url buttons (optional)
+#   posts:  Instagram post or reel links, embedded in the card, e.g.
+#             posts:
+#               - https://www.instagram.com/p/XXXXXXXXXXX/
+#           Instagram's embed script loads only when at least one post is listed.
+hobbies:
+  - title: Cricket
+    icon: g-bat
+    color: 3
+    text: 'A constant since childhood. I played for a local cricket club near home, later for Flipkart''s corporate team, and now follow the game closely as a spectator.'
+
+  - title: Music
+    icon: g-guitar
+    color: 4
+    text: 'I have loved playing the guitar and singing for as long as I can remember, and have performed in front of audiences a few times over the years. Some recordings will go up here.'
+
+  - title: Poetry
+    icon: g-pen
+    color: 2
+    text: 'I have written poems on and off for years, usually when a thought stays with me longer than it should. A few of them will appear here.'
+
+  - title: Films and books
+    icon: g-film
+    color: 1
+    text: 'I watch films and read across genres, and keep a running log of both. My ratings and lists live on Letterboxd and Goodreads.'
+    links:
+      - label: Letterboxd
+        url: https://letterboxd.com/souravchk/
+      - label: Goodreads
+        url: https://www.goodreads.com/user/show/50985172-sourav-chakraborty

@@ -1,14 +1,48 @@
-<!-- Experience panel -->
+<!-- Experience panel. Content lives in _data/experience.yml; this file only lays it out (two columns: roles alternate left and right, Skills ends the right column; on phones they stack in date order). -->
+{%- assign X = site.data.experience -%}
 <h2>Experience</h2>
-<div class="two rows">
-  <div class="row">
-    <div class="logo"><img src="images/caltech-logo.png" alt="Caltech logo"></div>
-    <div><h4>Visiting Student Researcher, Caltech</h4><p class="meta">Computing and Mathematical Sciences, 2026. Hosts: Steven Low and Adam Wierman.</p>
-      <ul><li>Decentralized multi-agent RL over large networked systems, where each agent's learning cost should stay local as the number of agents grows.</li><li>What communication delay between agents does to learning in networked MARL, with Adam Wierman (under review).</li><li>Talks on both L4DC papers to the RSRG and FALCON groups.</li></ul></div>
-  </div>
-  <div class="row">
-    <div class="logo"><img src="images/flipkart_logo.jpeg" alt="Flipkart logo"></div>
-    <div><h4>Software Development Engineer, Flipkart</h4><p class="meta">Bangalore, 2016 to 2019</p>
-      <ul><li>Built the query-suggestion pipeline behind related search: a query–product graph from search logs, with random walks to surface related queries. It shipped as the default for a search system serving 50M+ daily sessions.</li><li>Designed a pluggable MySQL backup platform that grew into BRaaS, Flipkart's central backup-and-recovery service, used by 20+ microservices.</li></ul></div>
-  </div>
+<p class="panel-intro">Research at CU Boulder and Caltech; before graduate school, search and ranking systems at Flipkart.</p>
+
+<div class="xp">
+{%- capture colA %}{% endcapture -%}{%- capture colB %}{% endcapture -%}
+{%- for r in X.roles -%}
+{%- capture item %}
+  <section class="xp-item{% if r.now %} now{% endif %}" style="order:{{ forloop.index0 }}">
+    <div class="xp-top">
+      <div class="xp-logo">{% if r.logo %}<img src="{{ '/images/' | append: r.logo | relative_url }}" alt="{{ r.org }} logo" loading="lazy">{% else %}<span>{{ r.mark }}</span>{% endif %}</div>
+      <div>
+        <div class="xp-head">
+          <h4>{% if r.org_url %}<a href="{{ r.org_url }}" target="_blank" rel="noopener">{{ r.org }}</a>{% else %}{{ r.org }}{% endif %}</h4>
+          <span class="xp-when">{{ r.when }}</span>
+        </div>
+        <p class="xp-role">{{ r.role }}</p>
+        <p class="xp-with">{{ r.place }}{% if r.with %} · {{ r.with | markdownify | remove: '<p>' | remove: '</p>' | strip }}{% endif %}</p>
+      </div>
+    </div>
+    <ul>
+      {%- for pt in r.points %}
+      <li>{{ pt | markdownify | remove: '<p>' | remove: '</p>' | strip }}</li>
+      {%- endfor %}
+    </ul>
+    {%- if r.tools %}<p class="xp-tools">{% for t in r.tools %}<span>{{ t }}</span>{% endfor %}</p>{% endif %}
+  </section>
+{%- endcapture -%}
+{%- assign m = forloop.index0 | modulo: 2 -%}
+{%- if m == 0 %}{% assign colA = colA | append: item %}{% else %}{% assign colB = colB | append: item %}{% endif -%}
+{%- endfor %}
+{%- capture skills %}
+  <section class="xp-item xp-skills" style="order:99">
+    <div class="xp-top">
+      <div class="xp-logo glyph"><svg aria-hidden="true"><use href="#g-gear"/></svg></div>
+      <div><div class="xp-head"><h4>Skills</h4></div><p class="xp-role">Methods, languages, and systems I work with</p></div>
+    </div>
+    <dl class="skills">
+      {%- for s in X.skills %}
+      <dt>{{ s.area }}</dt><dd>{% for i in s.items %}<span>{{ i }}</span>{% endfor %}</dd>
+      {%- endfor %}
+    </dl>
+  </section>
+{%- endcapture %}
+  <div class="xp-col">{{ colA }}</div>
+  <div class="xp-col">{{ colB }}{{ skills }}</div>
 </div>

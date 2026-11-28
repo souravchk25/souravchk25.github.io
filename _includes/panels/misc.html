@@ -1,33 +1,31 @@
-<!-- Miscellany panel -->
+<!-- Miscellany panel. Content lives in _data/misc.yml; this file only lays it out:
+     a card per hobby, with optional Instagram posts. -->
+{%- assign M = site.data.misc -%}
 <h2>Miscellany</h2>
-<div class="two">
-  <div>
-    <p class="sub-h">Off the clock</p>
-    <div class="hobby"><svg style="color:var(--t2)"><use href="#g-pen"/></svg><div><b>Poetry</b>A few of my poems will live here.</div></div>
-    <div class="hobby"><svg style="color:var(--t1)"><use href="#g-bat"/></svg><div><b>Cricket</b>Played for a school club, and later for Flipkart's corporate team.</div></div>
-    <div class="hobby"><svg style="color:var(--t4)"><use href="#g-play"/></svg><div><b>Music</b>What I'm listening to, and what I play.</div></div>
-    <div class="hobby"><svg style="color:var(--t3)"><use href="#g-brief"/></svg><div><b>Films and books</b>On <a href="https://letterboxd.com/souravchk/">Letterboxd</a> and <a href="https://www.goodreads.com/user/show/50985172-sourav-chakraborty">Goodreads</a>.</div></div>
-  </div>
-  <div>
-    <p class="sub-h">Whimsy</p>
-    <figure class="comic">
-      <svg viewBox="0 0 480 150" role="img" aria-label="Three-panel comic. A stick figure stands between an old favorite restaurant and a new place, thinks of the UCB formula with n equal to zero for the new place, and walks into the new place saying 'Exploring, then.'">
-        <g font-family="var(--sans)" font-size="12" fill="var(--ink)">
-          <rect x="4" y="4" width="152" height="140" rx="6" fill="none" stroke="var(--ink)" stroke-width="1.5"/><rect x="164" y="4" width="152" height="140" rx="6" fill="none" stroke="var(--ink)" stroke-width="1.5"/><rect x="324" y="4" width="152" height="140" rx="6" fill="none" stroke="var(--ink)" stroke-width="1.5"/>
-          <rect x="14" y="36" width="44" height="38" fill="var(--t3-soft)" stroke="var(--ink)"/><text x="16" y="30">old fave</text>
-          <rect x="102" y="36" width="44" height="38" fill="var(--t1-soft)" stroke="var(--ink)"/><text x="102" y="30">new place</text>
-          <g stroke="var(--ink)" stroke-width="2" fill="none"><circle cx="80" cy="90" r="8"/><line x1="80" y1="98" x2="80" y2="118"/><line x1="80" y1="106" x2="70" y2="112"/><line x1="80" y1="106" x2="90" y2="112"/><line x1="80" y1="118" x2="72" y2="136"/><line x1="80" y1="118" x2="88" y2="136"/></g><text x="72" y="78" font-size="15">?</text>
-          <ellipse cx="240" cy="46" rx="68" ry="30" fill="#fff" stroke="var(--ink)"/><text x="188" y="44" font-family="var(--serif)" font-style="italic" font-size="14">μ̂ + √(2 log t / n)</text><text x="200" y="62" font-size="11" fill="var(--muted)">new place: n = 0</text>
-          <g stroke="var(--ink)" stroke-width="2" fill="none"><circle cx="240" cy="104" r="8"/><line x1="240" y1="112" x2="240" y2="132"/><line x1="240" y1="120" x2="230" y2="126"/><line x1="240" y1="120" x2="250" y2="126"/></g>
-          <rect x="410" y="32" width="54" height="58" fill="var(--t1-soft)" stroke="var(--ink)"/><rect x="430" y="60" width="16" height="30" fill="#fff" stroke="var(--ink)"/>
-          <g stroke="var(--ink)" stroke-width="2" fill="none"><circle cx="382" cy="90" r="8"/><line x1="382" y1="98" x2="384" y2="118"/><line x1="383" y1="106" x2="396" y2="100"/><line x1="383" y1="106" x2="372" y2="112"/><line x1="384" y1="118" x2="396" y2="136"/><line x1="384" y1="118" x2="374" y2="138"/></g><text x="334" y="26">Exploring, then.</text>
-        </g>
-      </svg>
-      <figcaption>An optimist's dinner plan. Comic draft; memes and strips I like would rotate here.</figcaption>
-    </figure>
-    <ul class="quotes">
-      <li>All models are wrong, but some are useful.<cite>George Box</cite></li>
-    </ul>
-    <p style="font-size:.93rem">Erdős number 4, Dijkstra number 5.</p>
-  </div>
+<p class="panel-intro">{{ M.intro }}</p>
+
+{%- assign has_posts = false -%}
+<div class="hob-grid">
+  {%- for h in M.hobbies %}
+  {%- if h.posts and h.posts.size > 0 %}{% assign has_posts = true %}{% endif %}
+  <section class="hob th{{ h.color | default: 1 }}{% if h.posts and h.posts.size > 0 %} has-posts{% endif %}">
+    <div class="hob-top">
+      <div class="hob-icon"><svg aria-hidden="true"><use href="#{{ h.icon }}"/></svg></div>
+      <h4>{{ h.title }}</h4>
+    </div>
+    <p class="hob-text">{{ h.text | markdownify | remove: '<p>' | remove: '</p>' | strip }}</p>
+    {%- if h.links %}<p class="hob-links">{% for l in h.links %}<a href="{{ l.url }}" target="_blank" rel="noopener">{{ l.label }} <span aria-hidden="true">↗</span></a>{% endfor %}</p>{% endif %}
+    {%- if h.posts and h.posts.size > 0 %}
+    <div class="hob-posts">
+      {%- for u in h.posts %}
+      <blockquote class="instagram-media" data-instgrm-permalink="{{ u }}" data-instgrm-version="14"><a href="{{ u }}" target="_blank" rel="noopener">View this post on Instagram</a></blockquote>
+      {%- endfor %}
+    </div>
+    {%- endif %}
+  </section>
+  {%- endfor %}
 </div>
+
+{%- if has_posts %}
+<script async src="https://www.instagram.com/embed.js"></script>
+{%- endif %}

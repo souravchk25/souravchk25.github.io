@@ -1,0 +1,205 @@
+/* Colour themes, written by _tools/make-themes.py from site.css and figures.css. Do not edit by hand:
+   change the colour in site.css or figures.css and run python3 _tools/make-themes.py again.
+   The warm theme is the CSS as written; colours inside SVG are rewritten by assets/js/theme.js. */
+
+/* ---- science: from site.css ---- */
+html[data-theme="science"] { --paper: #ffffff; --card: #ffffff; --tint: #f3f4f6; --ink: #111111; --muted: #4a4a4a; --rule: #e1e4e8; --link: #3b4992; --edge: #9aa1a9; --accent: #bb0021; --say: #008b45; --fun: #a20056; --t1: #ee0000; --t1-soft: #ededed; --t2: #a20056; --t2-soft: #e5e5e5; --t3: #008b45; --t3-soft: #ebebeb; --t4: #631879; --t4-soft: #e6e6e6; --t5: #008280; --t5-soft: #e9e9e9; --t6: #5f559b; --t6-soft: #e8e8e8; --award: #bb0021; --gold-bg: #ffe39a; --gold-ink: #6e3d00; }
+:where(html[data-theme="science"]) .map-graph .edge { stroke: #757575; }
+:where(html[data-theme="science"]) .tile.c7 { --soft: #e9e9e9; }
+:where(html[data-theme="science"]) .bd-bar { fill: #e7e7e7; stroke: #9aa1a9; }
+:where(html[data-theme="science"]) .bd-ci { stroke: #111111; }
+:where(html[data-theme="science"]) .bd .ucb .bd-bar { fill: #e8e8e8; stroke: #5f559b; }
+:where(html[data-theme="science"]) .lec:hover .bd .ucb .bd-bar, :where(html[data-theme="science"]) .lec:focus-within .bd .ucb .bd-bar { fill: #e7e7e7; stroke: #9aa1a9; }
+:where(html[data-theme="science"]) .lec:hover .bd .top .bd-bar, :where(html[data-theme="science"]) .lec:focus-within .bd .top .bd-bar { fill: #e8e8e8; stroke: #5f559b; }
+
+/* ---- science: from figures.css ---- */
+:where(html[data-theme="science"]) .fig-graphs .fg-letter { color: #ee0000; }
+:where(html[data-theme="science"]) .fig-graphs .fg-note { text-shadow: 0 0 3px #ffffff, 0 0 3px #ffffff, 0 0 6px #ffffff; }
+:where(html[data-theme="science"]) .fig-graphs .fg-best { color: #a20056; }
+:where(html[data-theme="science"]) .fig-graphs .fg-or { color: #c50900; }
+:where(html[data-theme="science"]) .fig-graphs .fg-chip:hover { border-bottom-color: #ee0000; }
+:where(html[data-theme="science"]) .fg-mark { background: #ededed; color: #c50900; box-shadow: inset 0 0 0 1px #ccc0ff; }
+:where(html[data-theme="science"]) .fig-graphs .fg-num { fill: #111111; }
+:where(html[data-theme="science"]) .fig-graphs .fg-edge { stroke: #111111; }
+:where(html[data-theme="science"]) .fig-graphs .fg-edge.kn { stroke: #9aa1a9; }
+:where(html[data-theme="science"]) .fig-graphs .fg-edge.ghost { stroke: #9aa1a9; }
+:where(html[data-theme="science"]) .fig-graphs .fg-edge.local { stroke: #ee0000; }
+:where(html[data-theme="science"]) .fig-graphs .fg-edge.door { stroke: #a20056; }
+:where(html[data-theme="science"]) .fig-graphs .fg-edge.shut { stroke: #a20056; }
+:where(html[data-theme="science"]) .fig-graphs .fg-trail { stroke: #ee0000; }
+:where(html[data-theme="science"]) .fig-graphs .fg-trail.nav { stroke: #a20056; }
+:where(html[data-theme="science"]) .fig-graphs .fg-road-case { stroke: #cdcdcd; }
+:where(html[data-theme="science"]) .fig-graphs .fg-road { stroke: #ffffff; }
+:where(html[data-theme="science"]) .fig-graphs .fg-road.shut { stroke: #dedede; }
+:where(html[data-theme="science"]) .fig-graphs .fg-tl-on { stroke: #a20056; }
+:where(html[data-theme="science"]) .fig-graphs .fg-tl-off { stroke: #9aa1a9; }
+:where(html[data-theme="science"]) .fig-graphs .fg-wl { stroke: #ee0000; }
+:where(html[data-theme="science"]) .fig-graphs .fg-wl.nav { stroke: #a20056; }
+:where(html[data-theme="science"]) .fig-graphs .fg-brace { stroke: #c50900; }
+:where(html[data-theme="science"]) .fig-graphs .fg-cursor { fill: #ededed; }
+:where(html[data-theme="science"]) .fig-graphs .fg-band { fill: #ededed; }
+:where(html[data-theme="science"]) .fig-graphs .fg-shutcell { stroke: #c7c7c7; }
+:where(html[data-theme="science"]) .fig-graphs .fg-shutcell.best { stroke: #a20056; }
+:where(html[data-theme="science"]) .th-edge.on { stroke: #111111; }
+:where(html[data-theme="science"]) .th-edge.off { stroke: #9aa1a9; }
+:where(html[data-theme="science"]) .th-edge.mix { stroke: #009090; }
+:where(html[data-theme="science"]) .th-edge.door { stroke: #a20056; }
+:where(html[data-theme="science"]) .th-trail { stroke: #ee0000; }
+:where(html[data-theme="science"]) .th-trail.nav { stroke: #a20056; }
+:where(html[data-theme="science"]) .th-tile { stroke: #c7c7c7; }
+:where(html[data-theme="science"]) .th-tile.good { fill: #e7e7e7; stroke: #009090; }
+:where(html[data-theme="science"]) .th-tile.now { stroke: #111111; }
+:where(html[data-theme="science"]) .th-win { stroke: #009090; }
+:where(html[data-theme="science"]) .th-edge.uni { stroke: #009090; }
+:where(html[data-theme="science"]) .th-dot { stroke: #c7c7c7; }
+:where(html[data-theme="science"]) .th-dot.past { fill: #e3e3e3; stroke: #9aa1a9; }
+:where(html[data-theme="science"]) .th-dot.now { fill: #ee0000; stroke: #ee0000; }
+:where(html[data-theme="science"]) .th-brk { stroke: #c7c7c7; }
+:where(html[data-theme="science"]) .th-brk.ok { stroke: #009090; }
+:where(html[data-theme="science"]) .th-brk.no { stroke: #a20056; }
+:where(html[data-theme="science"]) .th-cone { fill: #a20056; stroke: #a20056; }
+:where(html[data-theme="science"]) .th-cd { stroke: #c7c7c7; }
+:where(html[data-theme="science"]) .th-cd.in { fill: #e5e5e5; stroke: #a20056; }
+:where(html[data-theme="science"]) .th-cd.src { stroke: #ee0000; }
+:where(html[data-theme="science"]) .th-cd.src.in { fill: #ee0000; stroke: #ee0000; }
+:where(html[data-theme="science"]) .figm .fm-letter { color: #a20056; }
+:where(html[data-theme="science"]) .figm .fm-route { text-shadow: 0 0 3px #ffffff, 0 0 3px #ffffff; }
+:where(html[data-theme="science"]) .figm .fm-route.env, :where(html[data-theme="science"]) .figm .fm-w.env { color: #4f66a2; }
+:where(html[data-theme="science"]) .figm .fm-route.pol, :where(html[data-theme="science"]) .figm .fm-w.pol { color: #c50900; }
+:where(html[data-theme="science"]) .figm .fm-w { text-shadow: 0 0 3px #ffffff, 0 0 3px #ffffff, 0 0 5px #ffffff; }
+:where(html[data-theme="science"]) .figm .fm-note { text-shadow: 0 0 3px #ffffff, 0 0 3px #ffffff; }
+:where(html[data-theme="science"]) .figm .fm-note.inf { color: #a20056; }
+:where(html[data-theme="science"]) .figm .fm-seg button[aria-pressed="true"] { background: #e5e5e5; color: #a20056; }
+:where(html[data-theme="science"]) .figm .fm-road-case { stroke: #cdcdcd; }
+:where(html[data-theme="science"]) .figm .fm-road { stroke: #ffffff; }
+:where(html[data-theme="science"]) .figm .fm-reach { fill: #a20056; stroke: #a20056; }
+:where(html[data-theme="science"]) .figk .fk-letter { color: #631879; }
+:where(html[data-theme="science"]) .figk .fk-note { text-shadow: 0 0 3px #ffffff, 0 0 3px #ffffff; }
+:where(html[data-theme="science"]) .figk .fk-note.lin { color: #595959; }
+:where(html[data-theme="science"]) .figk .fk-note.key { color: #631879; }
+:where(html[data-theme="science"]) .figc .fc-letter { color: #008b45; }
+:where(html[data-theme="science"]) .figc .fc-note { text-shadow: 0 0 3px #ffffff, 0 0 3px #ffffff, 0 0 4px #ffffff; }
+:where(html[data-theme="science"]) .figc .fc-note.col { color: #a20056; }
+:where(html[data-theme="science"]) .figc .fc-note.grn { color: #008b45; }
+:where(html[data-theme="science"]) .figc .fc-disk { fill: #ee0000; stroke: #ee0000; }
+:where(html[data-theme="science"]) .figc .fc-disk.col { fill: #a20056; stroke: #a20056; }
+:where(html[data-theme="science"]) .figc .fc-rbar { fill: #ee0000; }
+:where(html[data-theme="science"]) .figc .fc-rbar.col { fill: #a20056; }
+:where(html[data-theme="science"]) .figc .fc-mast { stroke: #4a4a4a; }
+:where(html[data-theme="science"]) .figc .fc-row.on { fill: #ececec; }
+:where(html[data-theme="science"]) .figc .fc-row.on.best { fill: #ebebeb; }
+:where(html[data-theme="science"]) .figc .fc-cell { stroke: #9aa1a9; }
+:where(html[data-theme="science"]) .figc .fc-cell.top { fill: #ebebeb; stroke: #008b45; }
+:where(html[data-theme="science"]) .figc .fc-ph { fill: #ffffff; stroke: #c7c7c7; }
+:where(html[data-theme="science"]) .figc .fc-ph.done { fill: #008b45; stroke: #008b45; }
+:where(html[data-theme="science"]) .figc .fc-ph.now { fill: #ee0000; stroke: #ee0000; }
+:where(html[data-theme="science"]) .figq .fq-letter { color: #008280; }
+:where(html[data-theme="science"]) .figq .fq-note { text-shadow: 0 0 3px #ffffff, 0 0 3px #ffffff, 0 0 4px #ffffff; }
+:where(html[data-theme="science"]) .figq .fq-note.col { color: #a20056; }
+:where(html[data-theme="science"]) .figq .fq-note.grn { color: #008280; }
+:where(html[data-theme="science"]) .figq .fq-note.cl { color: #595959; }
+:where(html[data-theme="science"]) .figq .fq-note.q { color: #008280; }
+:where(html[data-theme="science"]) .figq .fq-win { fill: #ee0000; stroke: #ee0000; }
+:where(html[data-theme="science"]) .figq .fq-dot { fill: #ee0000; }
+:where(html[data-theme="science"]) .figq .fq-dot.old { fill: #ffffff; stroke: #ee0000; }
+
+/* ---- tufte: from site.css ---- */
+html[data-theme="tufte"] { --paper: #fffff8; --card: #fffffb; --tint: #f4f4ea; --ink: #111111; --muted: #4a4a44; --rule: #e2e2d6; --link: #1f4e79; --edge: #a2a296; --accent: #a33a2a; --say: #3f6e3a; --fun: #8c2a3c; --t1: #b5512b; --t1-soft: #f1eede; --t2: #8c2a3c; --t2-soft: #e8e6d8; --t3: #3f6e3a; --t3-soft: #edebdd; --t4: #53477f; --t4-soft: #e9e6d7; --t5: #2c6a70; --t5-soft: #ebeadf; --t6: #76603f; --t6-soft: #eae8de; --award: #8c2a3c; --gold-bg: #ffe39a; --gold-ink: #6e3d00; }
+:where(html[data-theme="tufte"]) .map-graph .edge { stroke: #77766c; }
+:where(html[data-theme="tufte"]) .tile.c7 { --soft: #eceadf; }
+:where(html[data-theme="tufte"]) .bd-bar { fill: #e9e7dc; stroke: #a2a296; }
+:where(html[data-theme="tufte"]) .bd-ci { stroke: #111111; }
+:where(html[data-theme="tufte"]) .bd .ucb .bd-bar { fill: #eae8de; stroke: #76603f; }
+:where(html[data-theme="tufte"]) .lec:hover .bd .ucb .bd-bar, :where(html[data-theme="tufte"]) .lec:focus-within .bd .ucb .bd-bar { fill: #e9e7dc; stroke: #a2a296; }
+:where(html[data-theme="tufte"]) .lec:hover .bd .top .bd-bar, :where(html[data-theme="tufte"]) .lec:focus-within .bd .top .bd-bar { fill: #eae8de; stroke: #76603f; }
+
+/* ---- tufte: from figures.css ---- */
+:where(html[data-theme="tufte"]) .fig-graphs .fg-letter { color: #b5512b; }
+:where(html[data-theme="tufte"]) .fig-graphs .fg-note { text-shadow: 0 0 3px #fffff8, 0 0 3px #fffff8, 0 0 6px #fffff8; }
+:where(html[data-theme="tufte"]) .fig-graphs .fg-best { color: #8c2a3c; }
+:where(html[data-theme="tufte"]) .fig-graphs .fg-or { color: #954322; }
+:where(html[data-theme="tufte"]) .fig-graphs .fg-chip:hover { border-bottom-color: #b5512b; }
+:where(html[data-theme="tufte"]) .fg-mark { background: #f1eede; color: #954322; box-shadow: inset 0 0 0 1px #dec9a3; }
+:where(html[data-theme="tufte"]) .fig-graphs .fg-num { fill: #111111; }
+:where(html[data-theme="tufte"]) .fig-graphs .fg-edge { stroke: #111111; }
+:where(html[data-theme="tufte"]) .fig-graphs .fg-edge.kn { stroke: #a2a296; }
+:where(html[data-theme="tufte"]) .fig-graphs .fg-edge.ghost { stroke: #a2a296; }
+:where(html[data-theme="tufte"]) .fig-graphs .fg-edge.local { stroke: #b5512b; }
+:where(html[data-theme="tufte"]) .fig-graphs .fg-edge.door { stroke: #8c2a3c; }
+:where(html[data-theme="tufte"]) .fig-graphs .fg-edge.shut { stroke: #8c2a3c; }
+:where(html[data-theme="tufte"]) .fig-graphs .fg-trail { stroke: #b5512b; }
+:where(html[data-theme="tufte"]) .fig-graphs .fg-trail.nav { stroke: #8c2a3c; }
+:where(html[data-theme="tufte"]) .fig-graphs .fg-road-case { stroke: #cfcec1; }
+:where(html[data-theme="tufte"]) .fig-graphs .fg-road { stroke: #fffffb; }
+:where(html[data-theme="tufte"]) .fig-graphs .fg-road.shut { stroke: #e0ded3; }
+:where(html[data-theme="tufte"]) .fig-graphs .fg-tl-on { stroke: #8c2a3c; }
+:where(html[data-theme="tufte"]) .fig-graphs .fg-tl-off { stroke: #a2a296; }
+:where(html[data-theme="tufte"]) .fig-graphs .fg-wl { stroke: #b5512b; }
+:where(html[data-theme="tufte"]) .fig-graphs .fg-wl.nav { stroke: #8c2a3c; }
+:where(html[data-theme="tufte"]) .fig-graphs .fg-brace { stroke: #954322; }
+:where(html[data-theme="tufte"]) .fig-graphs .fg-cursor { fill: #f1eede; }
+:where(html[data-theme="tufte"]) .fig-graphs .fg-band { fill: #f1eede; }
+:where(html[data-theme="tufte"]) .fig-graphs .fg-shutcell { stroke: #c9c7bc; }
+:where(html[data-theme="tufte"]) .fig-graphs .fg-shutcell.best { stroke: #8c2a3c; }
+:where(html[data-theme="tufte"]) .th-edge.on { stroke: #111111; }
+:where(html[data-theme="tufte"]) .th-edge.off { stroke: #a2a296; }
+:where(html[data-theme="tufte"]) .th-edge.mix { stroke: #307a82; }
+:where(html[data-theme="tufte"]) .th-edge.door { stroke: #8c2a3c; }
+:where(html[data-theme="tufte"]) .th-trail { stroke: #b5512b; }
+:where(html[data-theme="tufte"]) .th-trail.nav { stroke: #8c2a3c; }
+:where(html[data-theme="tufte"]) .th-tile { stroke: #c9c7bc; }
+:where(html[data-theme="tufte"]) .th-tile.good { fill: #e9e7dc; stroke: #307a82; }
+:where(html[data-theme="tufte"]) .th-tile.now { stroke: #111111; }
+:where(html[data-theme="tufte"]) .th-win { stroke: #307a82; }
+:where(html[data-theme="tufte"]) .th-edge.uni { stroke: #307a82; }
+:where(html[data-theme="tufte"]) .th-dot { stroke: #c9c7bc; }
+:where(html[data-theme="tufte"]) .th-dot.past { fill: #e4e3da; stroke: #a2a296; }
+:where(html[data-theme="tufte"]) .th-dot.now { fill: #b5512b; stroke: #b5512b; }
+:where(html[data-theme="tufte"]) .th-brk { stroke: #c9c7bc; }
+:where(html[data-theme="tufte"]) .th-brk.ok { stroke: #307a82; }
+:where(html[data-theme="tufte"]) .th-brk.no { stroke: #8c2a3c; }
+:where(html[data-theme="tufte"]) .th-cone { fill: #8c2a3c; stroke: #8c2a3c; }
+:where(html[data-theme="tufte"]) .th-cd { stroke: #c9c7bc; }
+:where(html[data-theme="tufte"]) .th-cd.in { fill: #e8e6d8; stroke: #8c2a3c; }
+:where(html[data-theme="tufte"]) .th-cd.src { stroke: #b5512b; }
+:where(html[data-theme="tufte"]) .th-cd.src.in { fill: #b5512b; stroke: #b5512b; }
+:where(html[data-theme="tufte"]) .figm .fm-letter { color: #8c2a3c; }
+:where(html[data-theme="tufte"]) .figm .fm-route { text-shadow: 0 0 3px #fffff8, 0 0 3px #fffff8; }
+:where(html[data-theme="tufte"]) .figm .fm-route.env, :where(html[data-theme="tufte"]) .figm .fm-w.env { color: #3e5c82; }
+:where(html[data-theme="tufte"]) .figm .fm-route.pol, :where(html[data-theme="tufte"]) .figm .fm-w.pol { color: #954322; }
+:where(html[data-theme="tufte"]) .figm .fm-w { text-shadow: 0 0 3px #fffff8, 0 0 3px #fffff8, 0 0 5px #fffff8; }
+:where(html[data-theme="tufte"]) .figm .fm-note { text-shadow: 0 0 3px #fffff8, 0 0 3px #fffff8; }
+:where(html[data-theme="tufte"]) .figm .fm-note.inf { color: #8c2a3c; }
+:where(html[data-theme="tufte"]) .figm .fm-seg button[aria-pressed="true"] { background: #e8e6d8; color: #8c2a3c; }
+:where(html[data-theme="tufte"]) .figm .fm-road-case { stroke: #cfcec1; }
+:where(html[data-theme="tufte"]) .figm .fm-road { stroke: #fffffb; }
+:where(html[data-theme="tufte"]) .figm .fm-reach { fill: #8c2a3c; stroke: #8c2a3c; }
+:where(html[data-theme="tufte"]) .figk .fk-letter { color: #53477f; }
+:where(html[data-theme="tufte"]) .figk .fk-note { text-shadow: 0 0 3px #fffff8, 0 0 3px #fffff8; }
+:where(html[data-theme="tufte"]) .figk .fk-note.lin { color: #5a5952; }
+:where(html[data-theme="tufte"]) .figk .fk-note.key { color: #53477f; }
+:where(html[data-theme="tufte"]) .figc .fc-letter { color: #3f6e3a; }
+:where(html[data-theme="tufte"]) .figc .fc-note { text-shadow: 0 0 3px #fffff8, 0 0 3px #fffff8, 0 0 4px #fffff8; }
+:where(html[data-theme="tufte"]) .figc .fc-note.col { color: #8c2a3c; }
+:where(html[data-theme="tufte"]) .figc .fc-note.grn { color: #3f6e3a; }
+:where(html[data-theme="tufte"]) .figc .fc-disk { fill: #b5512b; stroke: #b5512b; }
+:where(html[data-theme="tufte"]) .figc .fc-disk.col { fill: #8c2a3c; stroke: #8c2a3c; }
+:where(html[data-theme="tufte"]) .figc .fc-rbar { fill: #b5512b; }
+:where(html[data-theme="tufte"]) .figc .fc-rbar.col { fill: #8c2a3c; }
+:where(html[data-theme="tufte"]) .figc .fc-mast { stroke: #4a4a44; }
+:where(html[data-theme="tufte"]) .figc .fc-row.on { fill: #edece4; }
+:where(html[data-theme="tufte"]) .figc .fc-row.on.best { fill: #edebdd; }
+:where(html[data-theme="tufte"]) .figc .fc-cell { stroke: #a2a296; }
+:where(html[data-theme="tufte"]) .figc .fc-cell.top { fill: #edebdd; stroke: #3f6e3a; }
+:where(html[data-theme="tufte"]) .figc .fc-ph { fill: #fffff8; stroke: #c9c7bc; }
+:where(html[data-theme="tufte"]) .figc .fc-ph.done { fill: #3f6e3a; stroke: #3f6e3a; }
+:where(html[data-theme="tufte"]) .figc .fc-ph.now { fill: #b5512b; stroke: #b5512b; }
+:where(html[data-theme="tufte"]) .figq .fq-letter { color: #2c6a70; }
+:where(html[data-theme="tufte"]) .figq .fq-note { text-shadow: 0 0 3px #fffff8, 0 0 3px #fffff8, 0 0 4px #fffff8; }
+:where(html[data-theme="tufte"]) .figq .fq-note.col { color: #8c2a3c; }
+:where(html[data-theme="tufte"]) .figq .fq-note.grn { color: #2c6a70; }
+:where(html[data-theme="tufte"]) .figq .fq-note.cl { color: #5a5952; }
+:where(html[data-theme="tufte"]) .figq .fq-note.q { color: #2c6a70; }
+:where(html[data-theme="tufte"]) .figq .fq-win { fill: #b5512b; stroke: #b5512b; }
+:where(html[data-theme="tufte"]) .figq .fq-dot { fill: #b5512b; }
+:where(html[data-theme="tufte"]) .figq .fq-dot.old { fill: #fffff8; stroke: #b5512b; }

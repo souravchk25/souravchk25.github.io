@@ -1,16 +1,73 @@
-<!-- Teaching panel -->
+<!-- Teaching panel. Content lives in _data/teaching.yml; this file only lays it out.
+     Lecture drawings are in _includes/lectures/<art>.html; videos open in the Talks player (assets/js/talks.js). -->
+{%- assign T = site.data.teaching -%}
 <h2>Teaching</h2>
-<div class="two">
-  <div class="stats" style="grid-template-columns:1fr; align-self:start">
-    <div class="stat"><b>~250</b><span>students taught as instructor of record, across two courses</span></div>
-    <div class="stat"><b>280+</b><span>TAs and graders onboarded as the department's Lead TA</span></div>
-    <div class="stat"><b>10+</b><span>semesters as a teaching assistant</span></div>
+<p class="panel-intro">{{ T.intro }}</p>
+
+<div class="tc-top">
+  <div class="tc-stats">
+    {%- for s in T.stats %}
+    <div class="tc-stat"><b>{{ s.num }}</b><span>{{ s.text }}</span></div>
+    {%- endfor %}
   </div>
-  <ul class="plain">
-    <li><time>Instructor</time><span>Introduction to Computational Thinking (CSCI 1200, about 200 students) and Introduction to Data Science with Probability and Statistics (CSCI 3022, about 50 students). I ran each course end to end.</span></li>
-    <li><time>Lead TA</time><span>2022 to 2025. Ran TA hiring interviews and annual onboarding, organized training workshops, and mentored new graduate TAs.</span></li>
-    <li><time>TA</time><span>Algorithms, Data Structures, and Starting Computing: recitations, office hours, and grading.</span></li>
-    <li><time>Guest</time><span>Lectures on bandit models (Advanced Machine Learning) and on graphs (Data Structures).</span></li>
-    <li><time>Honors</time><span><span class="aw">Outstanding Teaching Assistant Award</span> and Outstanding Service Award, 2025</span></li>
-  </ul>
+  <div class="tc-honors">
+    <svg aria-hidden="true"><use href="#g-star"/></svg>
+    <ul>
+      {%- for h in T.honors %}
+      <li><span class="aw">{{ h.name }}</span>, {{ h.year }}<span class="tc-why">{{ h.why }}</span></li>
+      {%- endfor %}
+    </ul>
+  </div>
+</div>
+
+<div class="tc-roles">
+{%- for r in T.roles %}
+  <section class="xp-item tc-role{% if r.now %} now{% endif %}">
+    <div class="xp-top">
+      <div class="xp-logo glyph tc"><svg aria-hidden="true"><use href="#{{ r.icon }}"/></svg></div>
+      <div class="xp-head"><h4>{{ r.title }}</h4><span class="xp-when">{{ r.when }}</span></div>
+    </div>
+    {%- if r.courses %}
+    <ul class="tc-courses">
+      {%- for c in r.courses %}
+      <li><span class="tc-code">{{ c.code }}</span><span class="tc-name">{{ c.name }}{% if c.term or c.students %}<span class="tc-meta">{{ c.term }}{% if c.term and c.students %} · {% endif %}{{ c.students }}</span>{% endif %}</span></li>
+      {%- endfor %}
+    </ul>
+    {%- endif %}
+    <ul>
+      {%- for pt in r.points %}
+      <li>{{ pt | markdownify | remove: '<p>' | remove: '</p>' | strip }}</li>
+      {%- endfor %}
+    </ul>
+  </section>
+{%- endfor %}
+</div>
+
+<h3 class="tc-sub">Lectures</h3>
+<p class="tc-note">Slides from lectures I have given, with short recorded versions to follow. More will be added here over time.</p>
+<div class="lecs">
+{%- for l in T.lectures -%}
+  {%- assign vid = l.video -%}{%- assign yt = nil -%}
+  {%- if vid and vid contains "youtube:" -%}{%- assign yt = vid | remove: "youtube:" | strip -%}{%- endif -%}
+  {%- capture vsrc %}{% if yt %}youtube:{{ yt }}{% else %}{{ vid | relative_url }}{% endif %}{% endcapture -%}
+  {%- capture art %}{% if l.art %}{% include lectures/{{ l.art }}.html %}{% else %}<svg style="color:var(--t6)" aria-hidden="true"><use href="#g-chalk"/></svg>{% endif %}{% endcapture %}
+  <article class="lec">
+    {%- if vid %}
+    <button type="button" class="lec-art" data-video="{{ vsrc }}" data-title="{{ l.title | escape }}" aria-label="Watch: {{ l.title | escape }}">{{ art }}<span class="play"></span></button>
+    {%- elsif l.slides %}
+    <a class="lec-art" href="{{ l.slides | relative_url }}" target="_blank" rel="noopener" tabindex="-1" aria-label="Slides: {{ l.title | escape }}">{{ art }}</a>
+    {%- else %}
+    <div class="lec-art">{{ art }}</div>
+    {%- endif %}
+    <div class="lec-body">
+      <p class="lec-kind">{{ l.kind }} · {{ l.course }} · {{ l.when }}</p>
+      <h4>{{ l.title }}</h4>
+      <p class="lec-blurb">{{ l.blurb }}</p>
+      <p class="tlinks">
+        {%- if l.slides %}<a href="{{ l.slides | relative_url }}" target="_blank" rel="noopener">Slides</a>{% if l.pages %}<span class="later">{{ l.pages }} slides</span>{% endif %}{% else %}<span class="later">Slides soon</span>{% endif -%}
+        {%- if vid %}<a href="{% if yt %}https://www.youtube.com/watch?v={{ yt }}{% else %}{{ vid | relative_url }}{% endif %}" data-video="{{ vsrc }}" data-title="{{ l.title | escape }}">Video{% if l.length %} · {{ l.length }}{% endif %}</a>{% endif -%}
+      </p>
+    </div>
+  </article>
+{%- endfor %}
 </div>

@@ -1,0 +1,72 @@
+# Awards panel (_includes/panels/awards.html). Edit text here; the panel only lays it out.
+#   times: shown as a ×N badge when an award was received more than once
+
+intro: 'Honors, fellowships, and travel awards since 2022, for research, teaching, and service.'
+
+# The three headline honors, shown as cards. style: gold for the best-paper award, plain otherwise.
+#   icon: a symbol id from _includes/icons.html
+highlights:
+  - name: Best Paper Runner-Up
+    where: L4DC 2026
+    year: 2026
+    style: gold
+    icon: g-star
+    line: 'One of two papers recognized at the conference, for [Flickering Multi-Armed Bandits](#t-graphs), which was also selected for an oral talk.'
+  - name: Ralph J. Slutz Student Excellence Award
+    where: CU Boulder
+    year: 2026
+    icon: g-medal
+    line: 'For academic excellence, research, and innovation.'
+  - name: Lloyd Botway Award
+    where: CU Boulder
+    year: 2022
+    icon: g-medal
+    line: 'The highest honor for a graduating master''s student, recognizing academics, teaching, research, and service.'
+
+# Every other award, as a tile under its group. icon: shown on each tile in the group.
+groups:
+  - title: Research
+    icon: g-star
+    items:
+      - name: Outstanding Research Paper Award
+        years: 2024, 2026
+        times: 2
+        line: 'For the L4DC 2026 and IEEE ACC 2024 papers.'
+      - name: Publication Recognition Award
+        years: '2024'
+        line: 'For a peer-reviewed publication in 2023–24 (IEEE ACC 2024).'
+      - name: CU Research Expo Poster Award
+        years: 2022, 2024
+        times: 2
+        line: 'At the university''s yearly research showcase.'
+
+  - title: Teaching and service
+    icon: g-medal
+    items:
+      - name: Outstanding Teaching Assistant Award
+        years: '2025'
+        line: 'For teaching and TA leadership.'
+      - name: Outstanding Service Award
+        years: '2025'
+        line: 'For Lead TA and graduate committee service.'
+
+  - title: Fellowships and travel
+    icon: g-ribbon
+    items:
+      - name: Summer Research Fellowship
+        years: '2026'
+        line: 'Funding full-time summer research.'
+      - name: Graduate Research Assistant Fellowship
+        years: '2025'
+        line: 'Funding full-time research for Spring 2026.'
+      - name: Early Career Development Fellowship
+        years: '2022'
+        line: 'At the start of the Ph.D.'
+      - name: Conference travel awards
+        years: 2024–26
+        times: 3
+        line: 'IEEE CDC 2026, IEEE CDC 2025, and IEEE ACC 2024, the last a full fellowship.'
+
+service:
+  reviewer: [ICML, NeurIPS, AAAI, AISTATS, IEEE CDC, IEEE ACC, IEEE Transactions on Control of Network Systems]
+  other: 'Elected student representative, [CS Graduate Committee](https://bouldercsgrads.org/officers), 2023.'

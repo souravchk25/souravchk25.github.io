@@ -1,0 +1,25 @@
+/* Additions for the hands strip, the colour switch, the tile drawings and the fact sketches.
+   Loaded after site.css and figures.css (see _includes/head.html). */
+
+/* the robot hand and the human hand, with the colour switch, at the top of the right column */
+.hands-strip { display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; margin: 0 0 0.5rem; }
+.hands-strip .hands-art { display: block; height: 78px; width: auto; flex: none; max-width: calc(100% - 4.6rem); }
+
+/* colour switch: one small dot per theme, the one in use ringed */
+.tsw { display: flex; align-items: center; gap: 0.2rem; flex: none; align-self: flex-start; margin-top: 0.15rem; font-size: 0.72rem; color: var(--muted); }
+.tsw i { margin-right: 0.2rem; opacity: 0.7; }
+.tsw button { background: none; border: 0; padding: 2px; cursor: pointer; border-radius: 50%; line-height: 0; }
+.tsw svg { width: 12px; height: 12px; display: block; }
+.tsw [data-theme-pick="warm"] { color: #d97000; }
+.tsw [data-theme-pick="science"] { color: #3b4992; }
+.tsw [data-theme-pick="tufte"] { color: #3a3a36; }
+/* the ring follows html[data-theme], so it is right from the first paint */
+html[data-theme="warm"] .tsw [data-theme-pick="warm"], html[data-theme="science"] .tsw [data-theme-pick="science"],
+html[data-theme="tufte"] .tsw [data-theme-pick="tufte"] { box-shadow: 0 0 0 1.5px var(--paper), 0 0 0 2.7px var(--ink); }
+.tsw button:hover { box-shadow: 0 0 0 1.5px var(--paper), 0 0 0 2.5px var(--edge); }
+
+/* the ink drawings in the section tiles are a little taller than the old glyphs */
+.tile svg { height: 30px; }
+
+/* the sketch beside the random fact */
+.fact-sk { flex: none; width: 80px; height: 44px; margin: -0.15rem 0.6rem -0.15rem 0; color: var(--fun); }

@@ -1,43 +1,43 @@
 # The map tiles, left to right. Each tile opens _includes/panels/<id>.html.
-#   accent: border colour class (c1 ... c9), color: icon colour, glyph: icon id from _includes/icons.html
+#   accent: border colour class (c1 ... c9), color: icon colour, glyph: drawing id from _includes/art/tile-drawings.html (d-research ... d-misc), or an icon id from _includes/icons.html (g-...)
 
 - id: research
   title: Research
-  glyph: g-graph
+  glyph: d-research
   color: var(--t1)
   accent: c1
 - id: talks
   title: Talks
-  glyph: g-play
+  glyph: d-talks
   color: var(--t4)
   accent: c4
 - id: writing
   title: Writing
-  glyph: g-pen
+  glyph: d-writing
   color: var(--t2)
   accent: c2
 - id: projects
   title: Projects
-  glyph: g-gear
+  glyph: d-projects
   color: var(--t3)
   accent: c3
 - id: experience
   title: Experience
-  glyph: g-brief
+  glyph: d-experience
   color: var(--link)
   accent: c7
 - id: teaching
   title: Teaching
-  glyph: g-chalk
+  glyph: d-teaching
   color: var(--t6)
   accent: c9
 - id: awards
   title: Awards
-  glyph: g-star
+  glyph: d-awards
   color: var(--award)
   accent: c6
 - id: misc
   title: Miscellany
-  glyph: g-bat
+  glyph: d-misc
   color: var(--t1)
   accent: c8

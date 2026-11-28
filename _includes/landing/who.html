@@ -10,7 +10,18 @@
     {%- endif %}
     <ul class="links">
       {%- for l in site.data.links %}
+      {%- if l.emails %}
+      <li><details class="mail">
+        <summary><i class="{{ l.icon }}" aria-hidden="true"></i>{{ l.label }}</summary>
+        <div class="mail-pop" role="group" aria-label="Email addresses">
+          {%- for e in l.emails %}
+          <p><a href="mailto:{{ e.address }}">{{ e.address }}</a><span class="mail-note">{{ e.note }}</span><button type="button" class="mail-copy" data-copy="{{ e.address }}" aria-label="Copy {{ e.address }}">Copy</button></p>
+          {%- endfor %}
+        </div>
+      </details></li>
+      {%- else %}
       <li><a href="{% if l.url == 'cv' %}{{ site.cv | relative_url }}{% else %}{{ l.url }}{% endif %}"><i class="{{ l.icon }}" aria-hidden="true"></i>{{ l.label }}</a></li>
+      {%- endif %}
       {%- endfor %}
     </ul>
   </div>

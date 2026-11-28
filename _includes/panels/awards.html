@@ -1,41 +1,43 @@
-<!-- Awards panel -->
+<!-- Awards panel. Content lives in _data/awards.yml; this file only lays it out:
+     three headline cards, then every other award as a tile in three columns, then service. -->
+{%- assign A = site.data.awards -%}
 <h2>Awards</h2>
-<div class="awards">
-  <div class="ag">
-    <p class="sub-h"><svg class="tro"><use href="#i-star"/></svg>For research</p>
-    <ul class="plain">
-      <li><time>2026</time><span><span class="hl-bp">Best Paper Runner-Up</span>, L4DC 2026. One of two papers recognized, for <a href="#t-graphs">Flickering Multi-Armed Bandits</a>.</span></li>
-      <li><time>2024, 2026</time><span><span class="aw">Outstanding Research Paper Award</span>, twice, from the department: for the L4DC 2026 and IEEE ACC 2024 papers.</span></li>
-      <li><time>2024</time><span><span class="aw">Publication Recognition Award</span>, for a peer-reviewed publication in 2023–24 (IEEE ACC 2024).</span></li>
-      <li><time>2022, 2024</time><span><span class="aw">CU Research Expo Poster Award</span>, twice, at the university's yearly research expo.</span></li>
+<p class="panel-intro">{{ A.intro }}</p>
+
+<div class="aw-hi">
+  {%- for h in A.highlights %}
+  <article class="aw-card{% if h.style == 'gold' %} gold{% endif %}">
+    <div class="aw-icon"><svg aria-hidden="true"><use href="#{{ h.icon }}"/></svg></div>
+    <div>
+      <p class="aw-where">{{ h.where }}<span>{{ h.year }}</span></p>
+      <h4>{{ h.name }}</h4>
+      <p class="aw-line">{{ h.line | markdownify | remove: '<p>' | remove: '</p>' | strip }}</p>
+    </div>
+  </article>
+  {%- endfor %}
+</div>
+
+<div class="aw-groups">
+  {%- for g in A.groups %}
+  <section class="aw-group">
+    <h3 class="aw-gh"><svg class="tro" aria-hidden="true"><use href="#i-star"/></svg>{{ g.title }}</h3>
+    <ul class="aw-list">
+      {%- for i in g.items %}
+      <li class="aw-tile">
+        <span class="aw-ti" aria-hidden="true"><svg><use href="#{{ g.icon | default: 'g-star' }}"/></svg></span>
+        <div>
+          <p class="aw-name"><span class="aw">{{ i.name }}</span>{% if i.times %}<span class="aw-x">×{{ i.times }}</span>{% endif %}</p>
+          <p class="aw-meta"><time>{{ i.years }}</time> · {{ i.line | markdownify | remove: '<p>' | remove: '</p>' | strip }}</p>
+        </div>
+      </li>
+      {%- endfor %}
     </ul>
-  </div>
-  <div class="ag">
-    <p class="sub-h"><svg class="tro"><use href="#i-star"/></svg>Department honors</p>
-    <ul class="plain">
-      <li><time>2026</time><span><span class="aw">Ralph J. Slutz Student Excellence Award</span>, for academic excellence, research, and innovation.</span></li>
-      <li><time>2022</time><span><span class="aw">Lloyd Botway Award</span>, the department's highest honor for a graduating M.S. student, recognizing academics, teaching, research, and service.</span></li>
-    </ul>
-    <p class="sub-h"><svg class="tro"><use href="#i-star"/></svg>For teaching and service</p>
-    <ul class="plain">
-      <li><time>2025</time><span><span class="aw">Outstanding Teaching Assistant Award</span>, for teaching and TA leadership.</span></li>
-      <li><time>2025</time><span><span class="aw">Outstanding Service Award</span>, for Lead TA and graduate committee service.</span></li>
-    </ul>
-  </div>
-  <div class="ag">
-    <p class="sub-h"><svg class="tro"><use href="#i-star"/></svg>Fellowships and travel</p>
-    <ul class="plain">
-      <li><time>2026</time><span>Summer Research Fellowship, funding full-time summer research.</span></li>
-      <li><time>2025</time><span>Graduate Research Assistant Fellowship, funding full-time research for Spring 2026.</span></li>
-      <li><time>2022</time><span>Early Career Development Fellowship, at the start of the PhD.</span></li>
-      <li><time>2024–26</time><span>Conference travel awards for IEEE CDC 2026, IEEE CDC 2025, and IEEE ACC 2024 (full fellowship).</span></li>
-    </ul>
-  </div>
-  <div class="ag">
-    <p class="sub-h">Service</p>
-    <ul class="plain">
-      <li><time>Reviewing</time><span>ICML, NeurIPS, AAAI, AISTATS, IEEE CDC, IEEE ACC, and IEEE Transactions on Control of Network Systems.</span></li>
-      <li><time>2023</time><span>Elected student representative, <a href="https://bouldercsgrads.org/officers">CS Graduate Committee</a>.</span></li>
-    </ul>
-  </div>
+  </section>
+  {%- endfor %}
+</div>
+
+<div class="aw-service">
+  <h3 class="aw-gh">Service</h3>
+  <p><span class="aw-label">Reviewer</span>{% for r in A.service.reviewer %}<span class="aw-chip">{{ r }}</span>{% endfor %}</p>
+  <p class="aw-other">{{ A.service.other | markdownify | remove: '<p>' | remove: '</p>' | strip }}</p>
 </div>

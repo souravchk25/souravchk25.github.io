@@ -1,0 +1,34 @@
+# Talks panel (_includes/panels/talks.html): research talks, newest first.
+# Lectures from teaching live in _includes/panels/teaching.html.
+#   title:   card title
+#   where:   venue line(s) under the title
+#   paper:   id from _data/papers.yml; adds a Paper link and shows that paper's drawn thumbnail
+#   slides:  PDF path (files live in /files/talks/); leave it out and the card says "Slides soon"
+#   video:   an .mp4 path, or youtube:VIDEO_ID; leave it out until there is a recording
+#   length:  video length shown on the link, e.g. 3 min
+#   poster:  still image shown before an .mp4 plays (optional)
+#
+# Adding a recording later is one line: put `video:` (and `length:`) on the talk.
+
+- title: Flickering Multi-Armed Bandits
+  where: Oral, L4DC 2026, Los Angeles; invited, Caltech CMS
+  paper: fmab
+  slides: /files/talks/flickering-bandits-l4dc-2026.pdf
+
+- title: Locality in Scalable MARL
+  where: Invited, Caltech CMS (RSRG and FALCON), 2026
+  paper: locality-marl
+  slides: /files/talks/locality-marl-2026.pdf
+
+- title: Incentivized Lipschitz Bandits
+  where: Paper talk, IEEE CDC 2025, Rio de Janeiro
+  paper: incentivized-lipschitz
+  slides: /files/talks/incentivized-lipschitz-cdc-2025.pdf
+
+- title: Incentivized Exploration in Non-stationary Bandits
+  where: Paper talk, IEEE ACC 2024, Toronto
+  paper: incentivized-nonstationary
+  slides: /files/talks/incentivized-nonstationary-acc-2024.pdf
+  video: /files/talks/incentivized-nonstationary-acc-2024.mp4
+  length: 3 min
+  poster: /files/talks/incentivized-nonstationary-acc-2024.jpg

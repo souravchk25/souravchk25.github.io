@@ -1,11 +1,39 @@
-<!-- Talks panel -->
+<!-- Talks panel. Content lives in _data/talks.yml; this file only lays it out.
+     Each card shows its paper's drawn thumbnail (_includes/thumbs/<paper id>.html), which plays on hover. -->
 <h2>Talks</h2>
-<p class="panel-intro">Slides and recordings will be linked from each card as they go up.</p>
-<div class="cards">
-  <div class="card"><div class="shot"><svg style="color:var(--t1)"><use href="#g-graph"/></svg><span class="play"></span></div><h4>Flickering Multi-Armed Bandits</h4><p class="meta">Oral, L4DC 2026, Los Angeles; invited, Caltech CMS</p><p class="soon">Recording coming</p></div>
-  <div class="card th2"><div class="shot"><svg style="color:var(--t2)"><use href="#g-lattice"/></svg><span class="play"></span></div><h4>Locality in Scalable MARL</h4><p class="meta">Invited, Caltech CMS (RSRG and FALCON), 2026</p><p class="soon">Recording coming</p></div>
-  <div class="card th3"><div class="shot"><svg style="color:var(--t3)"><use href="#g-curve"/></svg><span class="play"></span></div><h4>Incentivized Lipschitz Bandits</h4><p class="meta">Paper talk, IEEE CDC 2025, Rio de Janeiro</p></div>
-  <div class="card th3"><div class="shot"><svg style="color:var(--t3)"><use href="#g-curve"/></svg><span class="play"></span></div><h4>Incentivized Exploration in Non-stationary Bandits</h4><p class="meta">Paper talk, IEEE ACC 2024, Toronto</p></div>
-  <div class="card"><div class="shot"><svg style="color:var(--t5)"><use href="#g-chalk"/></svg></div><h4>Bandit models</h4><p class="meta">Guest lecture, Advanced Machine Learning, CU Boulder, 2023</p></div>
-  <div class="card"><div class="shot"><svg style="color:var(--t5)"><use href="#g-chalk"/></svg></div><h4>Introduction to graphs</h4><p class="meta">Guest lecture, Data Structures, CU Boulder, 2023</p></div>
+<p class="panel-intro">Slides for each talk are linked below. I am adding short recorded walkthroughs over time, and a play button marks the talks that have one.</p>
+<div class="cards talks">
+{%- for t in site.data.talks -%}
+  {%- assign p = nil -%}{%- assign th = nil -%}
+  {%- if t.paper -%}{%- assign p = site.data.papers | where: "id", t.paper | first -%}{%- assign th = site.data.themes | where: "id", p.theme | first -%}{%- endif -%}
+  {%- if th -%}{%- assign col = th.color -%}{%- assign glyph = th.glyph -%}{%- else -%}{%- assign col = 4 -%}{%- assign glyph = "g-play" -%}{%- endif -%}
+  {%- assign vid = t.video -%}{%- assign yt = nil -%}
+  {%- if vid and vid contains "youtube:" -%}{%- assign yt = vid | remove: "youtube:" | strip -%}{%- endif -%}
+  {%- capture vsrc %}{% if yt %}youtube:{{ yt }}{% else %}{{ vid | relative_url }}{% endif %}{% endcapture -%}
+  {%- capture art -%}
+    {%- if p and p.thumb_style == 'drawn' %}{% include thumbs/{{ p.id }}.html %}{% else %}<svg style="color:var(--t{{ col }})" aria-hidden="true"><use href="#{{ glyph }}"/></svg>{% endif -%}
+  {%- endcapture %}
+  <div class="card th{{ col }}">
+    {%- if vid %}
+    <button type="button" class="shot{% if p.thumb_style == 'drawn' %} drawn{% endif %}" data-video="{{ vsrc }}"{% if t.poster %} data-poster="{{ t.poster | relative_url }}"{% endif %} data-title="{{ t.title | escape }}" aria-label="Watch the talk: {{ t.title | escape }}">{{ art }}<span class="play"></span></button>
+    {%- elsif t.slides %}
+    <a class="shot{% if p.thumb_style == 'drawn' %} drawn{% endif %}" href="{{ t.slides | relative_url }}" target="_blank" rel="noopener" aria-label="Slides: {{ t.title | escape }}" tabindex="-1">{{ art }}</a>
+    {%- else %}
+    <div class="shot{% if p.thumb_style == 'drawn' %} drawn{% endif %}">{{ art }}</div>
+    {%- endif %}
+    <h4>{{ t.title }}</h4>
+    <p class="meta">{{ t.where }}</p>
+    <p class="tlinks">
+      {%- if t.slides %}<a href="{{ t.slides | relative_url }}" target="_blank" rel="noopener">Slides</a>{% else %}<span class="later">Slides soon</span>{% endif -%}
+      {%- if vid %}<a href="{% if yt %}https://www.youtube.com/watch?v={{ yt }}{% else %}{{ vid | relative_url }}{% endif %}" class="watch" data-video="{{ vsrc }}"{% if t.poster %} data-poster="{{ t.poster | relative_url }}"{% endif %} data-title="{{ t.title | escape }}">Video{% if t.length %} · {{ t.length }}{% endif %}</a>{% endif -%}
+      {%- if p and p.url %}<a href="{{ p.url }}" target="_blank" rel="noopener">Paper</a>{% endif -%}
+    </p>
+  </div>
+{%- endfor %}
 </div>
+
+<dialog class="talk-player" id="talk-player" aria-label="Talk recording">
+  <div class="tp-head"><b class="tp-title"></b><button type="button" class="tp-close" aria-label="Close">×</button></div>
+  <div class="tp-body"></div>
+</dialog>
+<script src="{{ '/assets/js/talks.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>

@@ -6,7 +6,7 @@ name: Sourav Chakraborty
 # say: *italics* mark the pronunciations (green, then magenta).
 say: Pronounced *Saw-rv*, or *Show-oo-rob* in Bengali
 # oneliner: the orange line under the name. oneliner_short replaces it on phones, where the full line does not fit.
-oneliner: Bandits · Reinforcement Learning · LLMs
+oneliner: AI Researcher · Bandits · RL · LLMs
 oneliner_short: Bandits · RL · LLMs
 # quote: optional small italic line in the card (add quote: and quote_by: to show one).
 portrait: images/portrait-ouray-head.jpg

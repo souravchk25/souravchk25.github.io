@@ -1,5 +1,6 @@
 # The row of links under your name. icon is a Font Awesome class
 # (https://fontawesome.com/search?ic=brands for brands). url: cv means the CV file set in _config.yml.
+# An entry with `emails:` instead of `url:` becomes a menu of addresses.
 
 - label: CV
   url: cv
@@ -11,5 +12,10 @@
   url: https://www.linkedin.com/in/souravchk/
   icon: fa-brands fa-linkedin
 - label: Email
-  url: mailto:sourav.chakraborty@colorado.edu
   icon: fa-regular fa-envelope
+  # Opens a small menu with both addresses (and copy buttons); the footer lists them too.
+  emails:
+    - address: mail.souravchk@gmail.com
+      note: permanent
+    - address: sourav.chakraborty@colorado.edu
+      note: university

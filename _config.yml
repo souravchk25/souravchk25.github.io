@@ -2,14 +2,15 @@
 # (it does not reload _config.yml on its own). GitHub Pages rebuilds on every push.
 
 title: Sourav Chakraborty
+tagline: Ph.D. candidate at CU Boulder      # the browser-tab and search-result title is "title | tagline"
 description: >-
-  Sourav Chakraborty: PhD candidate at the University of Colorado Boulder working on bandits,
-  multi-agent reinforcement learning, and the mathematics of learning from feedback.
+  Sourav Chakraborty is a Ph.D. candidate in Computer Science at the University of Colorado Boulder,
+  working on multi-armed bandits, multi-agent reinforcement learning, and large language models.
 url: "https://souravchk25.github.io"
 baseurl: ""
 author: Sourav Chakraborty
 lang: en
-image: /images/portrait.jpg      # preview image for links shared on LinkedIn and elsewhere
+image: /images/portrait.jpg      # kept for reference; the preview image itself is set by `image:` in index.html
 
 # Stable CV address: replace files/cv.pdf with each new CV and every link stays valid.
 cv: /files/cv.pdf
@@ -25,6 +26,8 @@ landing:
   map_ticks: true         # faint dotted lines from each node down to its tile
   map_walk: hop           # hop: the learner walks along edges; jump: it moves straight there
   fit_first_screen: true  # on tall windows, add room so the line under the map sits at the bottom
+  hands: true             # the robot hand and the human hand at the top of the right column
+  theme_switch: true      # the three colour dots beside the hands (warm, Science, Tufte)
 
 # ---------------------------------------------------------------- analytics (delete a line to turn it off)
 analytics:

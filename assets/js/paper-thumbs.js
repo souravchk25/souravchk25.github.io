@@ -432,7 +432,7 @@
     document.querySelectorAll('svg[data-thumb]').forEach(function (svg) {
       var A = MAKERS[svg.getAttribute('data-thumb')](svg), timer = null, k = 0;
       A.frame(A.still);
-      var card = svg.closest('.paper') || svg;
+      var card = svg.closest('.paper, .card') || svg;
       function play() { if (timer || !motionOn()) return; k = 0; (function tick() { A.frame(k); k = (k + 1) % A.n; timer = setTimeout(tick, A.step || (k ? 620 : 1600)); })(); }
       function stop() { clearTimeout(timer); timer = null; A.frame(A.still); }
       card.addEventListener('mouseenter', play); card.addEventListener('mouseleave', stop);

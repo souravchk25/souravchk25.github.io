@@ -1,0 +1,31 @@
+<!-- Lecture art (240 x 150): the warm-up puzzle that opens the graphs lecture, "draw this house in one stroke".
+     Still: the house on graph paper, its two odd corners marked start and end.
+     On hover (.lec:hover) the ink traces an Euler path A C E D C B D A B in 4 s, numbering the eight edges
+     as it reaches them (each --d is the time the ink reaches that edge's midpoint, from the edge lengths). -->
+<svg class="hs" viewBox="0 0 240 150" role="img" aria-label="The house puzzle: drawn in one stroke, starting and ending at the two odd corners">
+  <defs>
+    <pattern id="hs-grid" width="12" height="12" patternUnits="userSpaceOnUse"><path d="M12 0 H0 V12" fill="none" stroke="#e7dccb" stroke-width="0.8"/></pattern>
+  </defs>
+  <rect width="240" height="150" fill="#fbf6ec"/>
+  <rect width="240" height="150" fill="url(#hs-grid)"/>
+  <text x="14" y="22" font-family="Gentium Book Plus, Georgia, serif" font-style="italic" font-size="12" fill="#4f4a42">one stroke?</text>
+  <g stroke="#1c1a17" stroke-width="1.6" stroke-linecap="round" fill="none" opacity=".4">
+    <path d="M80 128 H160 M80 128 V72 M160 128 V72 M80 72 H160 M80 72 L120 30 L160 72 M80 128 L160 72 M160 128 L80 72"/>
+  </g>
+  <path class="hs-ink" pathLength="1" d="M80 128 L80 72 L120 30 L160 72 L80 72 L160 128 L160 72 L80 128 L160 128" fill="none" stroke="#8a5a2b" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <g class="hs-num" font-family="Lato, sans-serif" font-size="9" font-weight="700" fill="#8a5a2b" text-anchor="middle">
+    <text x="71" y="103" style="--d:.19s">1</text><text x="94" y="46" style="--d:.58s">2</text><text x="146" y="46" style="--d:.98s">3</text>
+    <text x="120" y="67" style="--d:1.45s">4</text><text x="105" y="82" style="--d:2.06s">5</text><text x="170" y="103" style="--d:2.59s">6</text>
+    <text x="146" y="97" style="--d:3.12s">7</text><text x="120" y="141" style="--d:3.73s">8</text>
+  </g>
+  <g fill="#fffdf8" stroke="#1c1a17" stroke-width="1.4">
+    <circle cx="80" cy="72" r="4.5"/><circle cx="160" cy="72" r="4.5"/><circle cx="120" cy="30" r="4.5"/>
+  </g>
+  <g fill="#8a5a2b"><circle cx="80" cy="128" r="5.5"/><circle cx="160" cy="128" r="5.5"/></g>
+  <g font-family="Lato, sans-serif" font-size="9" fill="#4f4a42">
+    <text x="70" y="131" text-anchor="end">start</text><text x="170" y="131">end</text>
+  </g>
+  <g font-family="Lato, sans-serif" font-size="8.5" fill="#4f4a42" text-anchor="middle">
+    <text x="200" y="22">odd corners:</text><text x="200" y="33">start and end</text>
+  </g>
+</svg>

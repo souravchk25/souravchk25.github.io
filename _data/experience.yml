@@ -1,0 +1,54 @@
+# Experience panel (_includes/panels/experience.html). Newest first; shown two per row, with Skills in the last cell.
+#   org, place, when:  header line; `now: true` marks a current role
+#   role, with:        role line and the line under it (Markdown allowed)
+#   logo:              image in /images/, or leave it out for a lettered tile (`mark:`)
+#   points:            bullets, Markdown; start each with a **bold lead**
+#   tools:             small chips under the bullets (optional)
+roles:
+  - org: Caltech
+    org_url: https://www.cms.caltech.edu/
+    place: Pasadena, CA
+    when: May – Oct 2026
+    logo: caltech-logo.png
+    role: Visiting Student Researcher, Computing and Mathematical Sciences
+    with: Hosted by [Steven Low](http://netlab.caltech.edu/) and [Adam Wierman](https://adamwierman.com/)
+    points:
+      - '**Multi-agent RL over large networks.** Decentralized learning methods whose cost stays local as the number of agents grows, built on our spectral theory of [locality](#t-marl).'
+      - '**Communication delay at scale.** How delayed information between agents changes learning in networked MARL, with Adam Wierman (under review).'
+      - '**Talks.** Flickering Multi-Armed Bandits and Locality in Scalable MARL, to the RSRG and FALCON groups.'
+
+  - org: University of Colorado Boulder
+    org_url: https://www.colorado.edu/cs/
+    place: Boulder, CO
+    when: Aug 2022 – present
+    now: true
+    logo: cu-icon.png
+    role: Graduate Research Assistant, Department of Computer Science
+    with: Advised by [Lijun Chen](https://spot.colorado.edu/~lich1539/)
+    points:
+      - '**Scalable multi-agent RL.** Showed that locality in decentralized MARL depends on the policy, with a spectral condition under which agents plan with nearby agents only and the error decays exponentially in the communication radius (L4DC ''26).'
+      - '**Bandits on dynamic graphs.** Introduced [Flickering Multi-Armed Bandits](#t-graphs), where an evolving random graph limits which arms the learner can reach, with near-optimal regret and a matching lower bound (Best Paper Runner-Up and Oral, L4DC ''26); follow-ups on learnability under local movement (NeurIPS ''25 workshop) and local explore-then-commit under sliding-window mixing (IEEE CDC ''26).'
+      - '**Continuous, multi-agent, and incentivized bandits.** [Algorithms](#t-cont) that pay myopic agents to explore despite payment-biased feedback (IEEE ACC ''24, IEEE CDC ''25), a communication-free multi-player protocol over continuous actions with near-optimal regret (AISTATS ''26), and its extension to proximity collisions (under review).'
+      - '**LLMs and quantum bandits.** The mathematical analysis for [kernelized linear attention](#t-fm) over symmetric cones, and two papers on [quantum bandit](#t-quantum) regret (all under review).'
+      - '**End to end.** I lead projects from problem formulation through proofs, writing, and rebuttals with my co-authors.'
+
+  - org: Flipkart
+    org_url: https://www.linkedin.com/company/flipkart/
+    place: Bangalore, India
+    when: Dec 2016 – 2019
+    logo: flipkart_logo.jpeg
+    role: Software Engineer, Search and Ranking
+    points:
+      - '**Related-search query suggestions.** Built and shipped the end-to-end pipeline: a query–product graph from search logs, with random walks to surface related queries. It became the default for a search system serving **50M+ daily sessions**, running as distributed batch jobs on Hadoop.'
+      - '**Ranking signals.** Added recency and semantic-similarity signals to improve retrieval and result ordering, validated with offline benchmarks and online A/B tests on a 10M-query set.'
+      - '**Backup and recovery.** Designed a pluggable MySQL backup platform that grew into BRaaS, Flipkart''s central backup-and-recovery service, adopted by **20+ microservices** and removing single points of failure.'
+      - '**Across teams.** Worked with the infrastructure and product-search teams on discovery quality and system reliability.'
+    tools: [Java, Cascading, Hadoop, MySQL, A/B testing]
+
+skills:
+  - area: Methods
+    items: [Reinforcement learning, Multi-agent RL, Bandits, Online learning, Stochastic optimization]
+  - area: Programming
+    items: [Python, C++, Java, SQL, R, Julia, PyTorch, NumPy, pandas, scikit-learn]
+  - area: Systems
+    items: [Docker, Kubernetes, Spark, Hadoop, MySQL, Git, Linux]

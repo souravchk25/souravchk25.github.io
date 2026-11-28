@@ -116,22 +116,31 @@ if (!still) {
 })();
 
 /* ---------- random fact: the list comes from _data/facts.yml ----------
-   The slot sizes itself to the longest fact, so the page never jumps when the die is rolled. */
+   The slot sizes itself to the longest fact, so the page never jumps when the die is rolled.
+   A fact with a sketch: field shows that drawing (from _includes/art/fact-sketches.html) beside it. */
 (function () {
   var data = document.getElementById('facts-data'), f = document.getElementById('fact');
   if (!data || !f) return;
-  var facts = JSON.parse(data.textContent).map(function (x) { return x.text + (x.source ? ' <small>(' + x.source + ')</small>' : ''); });
+  var raw = JSON.parse(data.textContent);
+  var facts = raw.map(function (x) { return x.text + (x.source ? ' <small>(' + x.source + ')</small>' : ''); });
   var i = 0, box = document.getElementById('fact-box'), btn = document.getElementById('next-fact');
+  var use = document.getElementById('fact-sk-use'), sk = use ? use.parentNode : null;
+  function sketch(k) {
+    if (!sk) return;
+    if (raw[k].sketch) { use.setAttribute('href', '#s-' + raw[k].sketch); sk.style.visibility = 'visible'; }
+    else sk.style.visibility = 'hidden';
+  }
   function fit() {
-    var probe = box.cloneNode(false); probe.removeAttribute('id'); probe.style.cssText = 'position:absolute;visibility:hidden;min-height:0;display:block;width:' + box.clientWidth + 'px';
+    var w = box.clientWidth - (sk ? sk.getBoundingClientRect().width + 10 : 0);
+    var probe = box.cloneNode(false); probe.removeAttribute('id'); probe.style.cssText = 'position:absolute;visibility:hidden;min-height:0;display:block;width:' + w + 'px';
     box.parentNode.appendChild(probe); var h = 0;
     facts.forEach(function (x) { probe.innerHTML = x; h = Math.max(h, probe.offsetHeight); });
-    probe.remove(); box.style.minHeight = h + 'px';
+    probe.remove(); box.style.minHeight = Math.max(h, sk ? 44 : 0) + 'px';
   }
   btn.addEventListener('click', function () {
     var j = i; while (facts.length > 1 && j === i) j = Math.floor(Math.random() * facts.length); i = j;
     btn.classList.remove('rolling'); void btn.offsetWidth; btn.classList.add('rolling');
-    f.classList.add('swap'); setTimeout(function () { f.innerHTML = facts[i]; f.classList.remove('swap'); }, still ? 0 : 180);
+    f.classList.add('swap'); setTimeout(function () { f.innerHTML = facts[i]; sketch(i); f.classList.remove('swap'); }, still ? 0 : 180);
   });
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit); fit();
   window.addEventListener('resize', fit);

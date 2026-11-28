@@ -17,12 +17,14 @@
 </head>
 <body>
 {% include icons.html %}
+{% if page.home %}{% include art/tile-drawings.html %}{% include art/fact-sketches.html %}{% endif %}
 <div class="wrap">
 {{ content }}
 </div>
 {% if page.home %}
 <script id="facts-data" type="application/json">{{ site.data.facts | jsonify }}</script>
 <script src="{{ '/assets/js/site.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
+<script src="{{ '/assets/js/contact.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
 {% endif %}
 {% include analytics.html %}
 </body>

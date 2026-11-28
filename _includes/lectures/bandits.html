@@ -1,0 +1,21 @@
+<!-- Lecture art (240 x 150): five arms with estimated means and confidence intervals; the arm with the
+     highest upper bound is the one to pull (UCB). On hover (.lec:hover) the intervals tighten and the pull moves to arm 2, the best mean. -->
+<svg class="bd" viewBox="0 0 240 150" role="img" aria-label="Five bandit arms with confidence intervals; the one with the highest upper bound is pulled">
+  <line x1="22" y1="128" x2="222" y2="128" stroke="#a39c8e" stroke-width="1.2"/>
+  <g class="bd-arms">
+    <g><rect class="bd-bar" x="30" y="82" width="22" height="46" rx="2"/><line class="bd-ci" x1="41" y1="62" x2="41" y2="102" style="--k:.55"/></g>
+    <g class="top"><rect class="bd-bar" x="70" y="58" width="22" height="70" rx="2"/><line class="bd-ci" x1="81" y1="44" x2="81" y2="72" style="--k:.6"/></g>
+    <g class="ucb"><rect class="bd-bar" x="110" y="66" width="22" height="62" rx="2"/><line class="bd-ci" x1="121" y1="26" x2="121" y2="106" style="--k:.3"/></g>
+    <g><rect class="bd-bar" x="150" y="94" width="22" height="34" rx="2"/><line class="bd-ci" x1="161" y1="76" x2="161" y2="112" style="--k:.6"/></g>
+    <g><rect class="bd-bar" x="190" y="76" width="22" height="52" rx="2"/><line class="bd-ci" x1="201" y1="56" x2="201" y2="96" style="--k:.55"/></g>
+  </g>
+  <g class="bd-pull" stroke="#8a5a2b" stroke-width="1.6" fill="none">
+    <path d="M121 8 L121 19 M117 15 L121 20 L125 15"/>
+  </g>
+  <g class="bd-pull2" stroke="#8a5a2b" stroke-width="1.6" fill="none">
+    <path d="M81 30 L81 41 M77 37 L81 42 L85 37"/>
+  </g>
+  <g font-family="Lato, sans-serif" font-size="9" fill="#4f4a42" text-anchor="middle">
+    <text x="41" y="141">1</text><text x="81" y="141">2</text><text x="121" y="141">3</text><text x="161" y="141">4</text><text x="201" y="141">5</text>
+  </g>
+</svg>

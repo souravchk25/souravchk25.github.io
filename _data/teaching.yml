@@ -1,0 +1,86 @@
+# Teaching panel (_includes/panels/teaching.html). Edit text here; the panel only lays it out.
+
+intro: 'I have taught at CU Boulder since 2020: two courses as instructor of record, three years as the department''s Lead TA, and more than ten semesters of recitations and office hours.'
+
+stats:
+  - num: '~250'
+    text: students taught as instructor of record
+  - num: '600+'
+    text: students supported as a teaching assistant
+  - num: '10+'
+    text: semesters as a teaching assistant
+  - num: '280+'
+    text: TAs, graders, and staff onboarded as Lead TA
+
+honors:
+  - name: Outstanding Teaching Assistant Award
+    year: 2025
+    why: for teaching and TA leadership
+  - name: Outstanding Service Award
+    year: 2025
+    why: for Lead TA and graduate committee service
+
+# Role cards. icon: a symbol id from _includes/icons.html
+#   courses: code, name, term (optional), students (optional)
+roles:
+  - title: Instructor of record
+    when: 2020 – 2021
+    icon: g-chalk
+    courses:
+      - code: CSCI 1200
+        name: Introduction to Computational Thinking
+        term: Fall 2021
+        students: about 200 students
+      - code: CSCI 3022
+        name: Introduction to Data Science with Probability and Statistics
+        term: Summer 2020
+        students: about 50 students
+    points:
+      - 'Ran each course end to end: lecture planning, teaching, assessments, and final grades.'
+      - 'Coordinated the instructional staff for each course.'
+
+  - title: Department Lead TA
+    when: 2022 – 2025
+    icon: g-team
+    points:
+      - 'Selected through a teaching review and interviews, and reappointed for three consecutive years.'
+      - 'Ran TA hiring interviews and the annual onboarding for **280+** TAs, graders, and instructional staff.'
+      - 'Organized training workshops and mentored new graduate TAs.'
+      - 'Served as the TAs'' liaison with department leadership.'
+
+  - title: Graduate teaching assistant
+    when: 2020 – present
+    now: true
+    icon: g-qa
+    courses:
+      - code: CSCI 3104
+        name: Algorithms
+      - code: CSCI 2270/2275
+        name: Data Structures
+      - code: CSCI 1300
+        name: Starting Computing
+    points:
+      - 'Weekly recitations, office hours, quizzes and lab sessions, and grading, across 10+ semesters and **600+** students.'
+      - 'Occasional full lectures, such as the graphs lecture below.'
+
+# Lectures, newest first. Adding one later is one entry here.
+#   art:     drawing in _includes/lectures/<art>.html (optional; falls back to the chalkboard icon)
+#   slides:  PDF in /files/talks/ ; leave it out and the card says "Slides soon"
+#   pages:   slide count shown on the card (optional)
+#   video:   an .mp4 path or youtube:VIDEO_ID, with length: (optional)
+lectures:
+  - title: 'Graphs: what''s left when you keep only the connections'
+    course: CSCI 2270 Data Structures
+    when: Fall 2026
+    kind: Lecture
+    art: house
+    slides: /files/talks/graphs-csci2270-2026.pdf
+    pages: 26
+    blurb: 'Opens with a puzzle (draw this house in one stroke) and Euler''s bridges of Königsberg, asks whether a slime mold can design Tokyo''s rail network, then builds the vocabulary and the two ways to store a graph, adjacency matrix and list, in C++. Ends on Six Degrees of Wikipedia.'
+
+  - title: Bandit models
+    course: Advanced Machine Learning
+    when: Fall 2023
+    kind: Guest lecture
+    art: bandits
+    blurb: 'The explore–exploit trade-off and the multi-armed bandit model, for a graduate machine learning course.'
